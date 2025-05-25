@@ -1,0 +1,6 @@
+This is a text file
+This is a new line
+The next line is empty
+
+The above line is empty
+This is the last line
