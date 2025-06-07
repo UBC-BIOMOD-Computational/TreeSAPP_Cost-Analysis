@@ -1,0 +1,88 @@
+
+1. carbonic anhydrase [Synechocystis sp. PCC 6803]
+263 aa protein
+BAA10271.1 GI:1001130
+
+2. carbonic anhydrase [Synechocystis sp. PCC 6803]
+311 aa protein
+BAA18166.1 GI:1653251
+
+3. sll0732 [Synechocystis sp. PCC 6803]
+191 aa protein
+BAA18750.1 GI:1653840
+
+4. carbonic anhydrase [Halalkalibacterium halodurans C-125]
+196 aa protein
+BAB07005.1 GI:10175909
+
+5. mlr4135 [Mesorhizobium japonicum MAFF 303099]
+214 aa protein
+BAB50864.1 GI:14024260
+
+6. carbonic anhydrase [Salmonella enterica subsp. enterica serovar Typhi str. CT18]
+220 aa protein
+CAD01329.1 GI:16501457
+
+7. carbonate dehydratase [Nostoc sp. PCC 7120 = FACHB-418]
+243 aa protein
+BAB74609.1 GI:17132004
+
+8. carbonic anhydrase [Oceanobacillus iheyensis HTE831]
+186 aa protein
+BAC13053.1 GI:22776778
+
+9. conserved hypothetical protein [Corynebacterium efficiens YS-314]
+207 aa protein
+BAC19337.1 GI:23494370
+
+10. carbonate dehydratase [Bradyrhizobium diazoefficiens USDA 110]
+214 aa protein
+BAC45765.1 GI:27348748
+
+11. carbonic anhydrase [Bradyrhizobium diazoefficiens USDA 110]
+251 aa protein
+BAC47330.1 GI:27350319
+
+12. bll4863 [Bradyrhizobium diazoefficiens USDA 110]
+246 aa protein
+BAC50128.1 GI:27353127
+
+13. bll4865 [Bradyrhizobium diazoefficiens USDA 110]
+247 aa protein
+BAC50130.1 GI:27353129
+
+14. putative carbonic anhydrase [Vibrio parahaemolyticus RIMD 2210633]
+222 aa protein
+BAC60777.1 GI:28807512
+
+15. carbonate dehydratase [Gloeobacter violaceus PCC 7421]
+210 aa protein
+BAC88886.1 GI:35211508
+
+16. periplasmic beta-type carbonic anhydrase [Gloeobacter violaceus PCC 7421]
+234 aa protein
+BAC90029.1 GI:35212655
+
+17. carbonic anhydrase [Escherichia coli str. K-12 substr. W3110]
+220 aa protein
+BAB96701.2 GI:85674342
+
+18. carbonic anhydrase [Escherichia coli str. K-12 substr. W3110]
+219 aa protein
+BAE76121.1 GI:85674481
+
+19. Carbonic anhydrase [Polaromonas sp. CG9_12]
+221 aa protein
+CDS49047.1 GI:669782975
+
+20. Carbonic anhydrase [Polaromonas sp. CG9_12]
+239 aa protein
+CDS51767.1 GI:669784382
+
+21. Carbonic anhydrase [Polaromonas sp. CG9_12]
+163 aa protein
+CDS53268.1 GI:669785421
+
+22. Adenylosuccinate lyase [Rubrobacter radiotolerans DSM 5868]
+438 aa protein
+SMC04083.1 GI:1174169261

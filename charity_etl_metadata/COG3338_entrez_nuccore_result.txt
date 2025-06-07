@@ -1,0 +1,746 @@
+
+1. JP 2019520080-A/55339: MATERIALS AND METHODS FOR TREATMENT OF PAIN RELATED DISORDERS
+20 bp linear other-genetic 
+PB105792.1 GI:2859168855
+
+2. Acinetobacter lwoffii SH145 cont1.45, whole genome shotgun sequence
+96,702 bp linear DNA 
+ACPN01000045.1 GI:261888997
+
+3. Citromicrobium bathyomarinum JL354 contig18, whole genome shotgun sequence
+872,285 bp linear DNA 
+ADAE01000018.1 GI:268321961
+
+4. Leuconostoc fallax KCTC 3537 contig00002, whole genome shotgun sequence
+154,123 bp linear DNA 
+AEIZ01000002.1 GI:310616823
+
+5. Weissella cibaria KACC 11862 contig00030, whole genome shotgun sequence
+116,158 bp linear DNA 
+AEKT01000028.1 GI:311243581
+
+6. Leuconostoc gelidum subsp. gelidum KCTC 3527 contig00022, whole genome shotgun sequence
+15,245 bp linear DNA 
+AEMI01000022.1 GI:312182558
+
+7. Loigolactobacillus coryniformis subsp. coryniformis KCTC 3167 = DSM 20001 strain KCTC 3167 contig00513, whole genome shotgun sequence
+59,088 bp linear DNA 
+AELK01000194.1 GI:312193169
+
+8. Fructobacillus fructosus KCTC 3544 contig00018, whole genome shotgun sequence
+97,994 bp linear DNA 
+AEOP01000018.1 GI:316987132
+
+9. Citromicrobium sp. JLT1363 contig00008, whole genome shotgun sequence
+290,122 bp linear DNA 
+AEUE01000008.1 GI:320004512
+
+10. Photobacterium leiognathi subsp. mandapamensis svers.1.1. DNA, contig: pmContig03, whole genome shotgun sequence
+72,121 bp linear DNA 
+BACE01000003.1 GI:327246678
+
+11. Haemophilus sputorum CCUG 13788 contig00009, whole genome shotgun sequence
+155,829 bp linear DNA 
+AFNK01000006.1 GI:334363878
+
+12. Acinetobacter lwoffii WJ10621 contig003, whole genome shotgun sequence
+487,620 bp linear DNA 
+AFQY01000003.1 GI:337752633
+
+13. Paucilactobacillus suebicus DSM 5007 = KCTC 3549 DNA, contig: contig00019, whole genome shotgun sequence
+85,742 bp linear DNA 
+BACO01000019.1 GI:338744012
+
+14. Lacticaseibacillus zeae DSM 20178 = KCTC 3804 DNA, contig: contig00075, whole genome shotgun sequence
+22,855 bp linear DNA 
+BACQ01000075.1 GI:338747961
+
+15. Pseudomonas sp. S9 Contig3, whole genome shotgun sequence
+496,713 bp linear DNA 
+AFFX01000003.1 GI:342151720
+
+16. Stutzerimonas stutzeri SDM-LAC contig000140, whole genome shotgun sequence
+18,721 bp linear DNA 
+AGSX01000139.1 GI:357435719
+
+17. Paenibacillus peoriae KCTC 3763 contig47, whole genome shotgun sequence
+232,241 bp linear DNA 
+AGFX01000038.1 GI:359367749
+
+18. Pseudomonas fragi B25 genomic scaffold Scaffold3, whole genome shotgun sequence
+632,126 bp linear DNA 
+JH604624.1 GI:379979639
+
+19. Sinorhizobium sojae CCBAU 05684 Scaffold6.contig5, whole genome shotgun sequence
+79,211 bp linear DNA 
+AJQT01000043.1 GI:386305790
+
+20. Sinorhizobium sp. CCBAU 05631 Scaffold5.contig6, whole genome shotgun sequence
+24,738 bp linear DNA 
+AJQU01000056.1 GI:386306089
+
+21. Ureibacillus thermosphaericus str. Thermo-BF S3M_006, whole genome shotgun sequence
+120,225 bp linear DNA 
+AJIK01000006.1 GI:387847697
+
+22. Nocardia exalbida NBRC 100660 DNA, contig: NE1_con58, whole genome shotgun sequence
+132,217 bp linear DNA 
+BAFZ01000058.1 GI:395452955
+
+23. Nocardia otitidiscaviarum NBRC 14405 DNA, contig: NO1_con65, whole genome shotgun sequence
+90,050 bp linear DNA 
+BAGD01000065.1 GI:395620753
+
+24. Nocardia pneumoniae NBRC 100136 DNA, contig: NP2_con40, whole genome shotgun sequence
+268,674 bp linear DNA 
+BAGF01000040.1 GI:395621060
+
+25. Algibacter luteus strain P7-3-5 contig005, whole genome shotgun sequence
+265,257 bp linear DNA 
+ALIH01000005.1 GI:398373943
+
+26. Chelatococcus sp. GW1 contig000017, whole genome shotgun sequence
+7,079 bp linear DNA 
+ALIQ01000017.1 GI:398376212
+
+27. Yersinia massiliensis CCUG 53443 WGS project CAKR00000000 data, contig 00009, whole genome shotgun sequence
+952,156 bp linear DNA 
+CAKR01000009.1 GI:398636070
+
+28. Cupriavidus sp. BIS7 contig61, whole genome shotgun sequence
+104,523 bp linear DNA 
+ALOU01000061.1 GI:401727813
+
+29. Cupriavidus sp. BIS7 contig46, whole genome shotgun sequence
+18,356 bp linear DNA 
+ALOU01000046.1 GI:401727851
+
+30. Enterobacteriaceae bacterium B14 DNA, contig: contig00064, whole genome shotgun sequence
+21,838 bp linear DNA 
+BAGV01000064.1 GI:403185540
+
+31. Enterobacteriaceae bacterium LSJC7 Scaffold5_1, whole genome shotgun sequence
+238,331 bp linear DNA 
+AMFN01000015.1 GI:407971916
+
+32. Nodosilinea nodulosa PCC 7104 genomic scaffold Lepto7104DRAFT_LPD.2, whole genome shotgun sequence
+6,098,684 bp linear DNA 
+JH976537.1 GI:410708119
+
+33. Pseudomonas nitroreducens TX1 Contig084, whole genome shotgun sequence
+74,966 bp linear DNA 
+AMZB01000084.1 GI:422814491
+
+34. Mastigocladopsis repens PCC 10914 genomic scaffold Mas10914DRAFT_scaffold1.1, whole genome shotgun sequence
+6,070,411 bp linear DNA 
+JH992901.1 GI:426006171
+
+35. Prochlorothrix hollandica PCC 9006 = CALU 1027 strain PCC 9006 Pro9006DRAFT_Contig5.9_C55, whole genome shotgun sequence
+25,583 bp linear DNA 
+ANKN01000055.1 GI:443003412
+
+36. Anabaena sp. PCC 7108 genomic scaffold Ana7108scaffold_2, whole genome shotgun sequence
+5,714,552 bp linear DNA 
+KB235896.1 GI:443349442
+
+37. Nafulsella turpanensis ZLM-10 contig0013, whole genome shotgun sequence
+144,823 bp linear DNA 
+ANNU01000013.1 GI:461458582
+
+38. Paenibacillus sp. A9 contig3, whole genome shotgun sequence
+319,935 bp linear DNA 
+AOIG01000003.1 GI:461488099
+
+39. Kribbella catacumbae DSM 19601 A3ESDRAFT_scaffold_54.55_C, whole genome shotgun sequence
+60,300 bp linear DNA 
+AQUZ01000055.1 GI:480757232
+
+40. Kordiimonas gwangyangensis DSM 19435 = JCM 12864 strain DSM 19435 B150DRAFT_scaffold_0.1_C, whole genome shotgun sequence
+1,053,240 bp linear DNA 
+AQXF01000001.1 GI:481038976
+
+41. Hahella ganghwensis DSM 17046 F566DRAFT_scaffold00001.1_C, whole genome shotgun sequence
+288,733 bp linear DNA 
+AQXX01000144.1 GI:481710772
+
+42. Psychroflexus tropicus DSM 15496 F598DRAFT_scaffold00003.3_C2, whole genome shotgun sequence
+263,752 bp linear DNA 
+ARLA01000023.1 GI:481757179
+
+43. Flexithrix dorotheae DSM 6795 A3EMDRAFT_scaffold_81.82_C, whole genome shotgun sequence
+3,815 bp linear DNA 
+ARBP01000086.1 GI:481787236
+
+44. Flexithrix dorotheae DSM 6795 A3EMDRAFT_scaffold_2.3_C, whole genome shotgun sequence
+624,270 bp linear DNA 
+ARBP01000003.1 GI:481787571
+
+45. Rhizobium sp. BR816 genomic scaffold scaffold1, whole genome shotgun sequence
+6,127,971 bp linear DNA 
+KB905370.1 GI:482578600
+
+46. Methylosinus sp. LW4 genomic scaffold MetLW4DRAFT_scaffold1.1, whole genome shotgun sequence
+3,979,493 bp linear DNA 
+KB900626.1 GI:482578631
+
+47. Bradyrhizobium japonicum WSM2793 genomic scaffold A3ASDRAFT_scaffold_35.36, whole genome shotgun sequence
+88,349 bp linear DNA 
+KB902797.1 GI:482581086
+
+48. Rhizobium giardinii bv. giardinii H152 genomic scaffold A3AYDRAFT_scaffold_6.7, whole genome shotgun sequence
+319,576 bp linear DNA 
+KB902724.1 GI:482581159
+
+49. Cytophaga aurantiaca DSM 3654 genomic scaffold A3EEDRAFT_scaffold_7.8, whole genome shotgun sequence
+251,229 bp linear DNA 
+KB903664.1 GI:482581474
+
+50. Bacillus sp. 37MA genomic scaffold A3M5DRAFT_scaffold1.1, whole genome shotgun sequence
+3,764,047 bp linear DNA 
+KB889752.1 GI:482583106
+
+51. Uliginosibacterium gangwonense DSM 18521 genomic scaffold B145DRAFT_scaffold_1.2, whole genome shotgun sequence
+591,339 bp linear DNA 
+KB892835.1 GI:482593467
+
+52. Uliginosibacterium gangwonense DSM 18521 genomic scaffold B145DRAFT_scaffold_0.1, whole genome shotgun sequence
+601,747 bp linear DNA 
+KB892834.1 GI:482593468
+
+53. Paenibacillus massiliensis 2301065 = DSM 16942 genomic scaffold D328DRAFT_scaffold00003.3, whole genome shotgun sequence
+553,195 bp linear DNA 
+KB898187.1 GI:482597060
+
+54. Saccharibacillus kuerlensis DSM 22868 genomic scaffold F456DRAFT_scaffold00028.28, whole genome shotgun sequence
+49,015 bp linear DNA 
+KB899304.1 GI:482598243
+
+55. Methylophilus methylotrophus DSM 46235 = ATCC 53528 genomic scaffold F463DRAFT_scaffold00001.1, whole genome shotgun sequence
+1,347,054 bp linear DNA 
+KB905141.1 GI:482598432
+
+56. Hirschia maritima DSM 19733 genomic scaffold F551DRAFT_scaffold00005.5, whole genome shotgun sequence
+255,854 bp linear DNA 
+KB899548.1 GI:482598522
+
+57. Halomonas lutea DSM 23508 genomic scaffold F568DRAFT_scaffold00001.1, whole genome shotgun sequence
+569,234 bp linear DNA 
+KB899989.1 GI:482598991
+
+58. Psychrobacter lutiphocae DSM 21542 H140DRAFT_scaffold00020.20_C, whole genome shotgun sequence
+62,638 bp linear DNA 
+ARNF01000064.1 GI:482627402
+
+59. Bradyrhizobium japonicum USDA 124 genomic scaffold B370DRAFT_scaffold_23.24, whole genome shotgun sequence
+102,131 bp linear DNA 
+KB893844.1 GI:482636501
+
+60. Actinobacillus capsulatus DSM 19761 genomic scaffold C228DRAFT_scaffold00020.20, whole genome shotgun sequence
+55,119 bp linear DNA 
+KB893949.1 GI:482636702
+
+61. Algicola sagamiensis DSM 14643 genomic scaffold C505DRAFT_scaffold00002.2, whole genome shotgun sequence
+457,130 bp linear DNA 
+KB894492.1 GI:482638691
+
+62. Thiomicrospira arctica DSM 13458 genomic scaffold F612DRAFT_scaffold00001.1, whole genome shotgun sequence
+1,825,481 bp linear DNA 
+KB905899.1 GI:482674101
+
+63. Acidobacteriaceae bacterium KBS 83 genomic scaffold G002DRAFT_scaffold00004.4, whole genome shotgun sequence
+826,801 bp linear DNA 
+KB906736.1 GI:482674947
+
+64. Acidobacteriaceae bacterium KBS 89 genomic scaffold G003DRAFT_scaffold00001.1, whole genome shotgun sequence
+1,636,164 bp linear DNA 
+KB906754.1 GI:482674963
+
+65. Psychromonas ossibalaenae ATCC BAA-1528 strain JAMM 0738 genomic scaffold G327DRAFT_scaffold00018.18, whole genome shotgun sequence
+94,156 bp linear DNA 
+KB906984.1 GI:482675253
+
+66. Eudoraea adriatica DSM 19308 genomic scaffold G504DRAFT_scaffold00002.2, whole genome shotgun sequence
+704,250 bp linear DNA 
+KB907547.1 GI:482675844
+
+67. Vitreoscilla stercoraria DSM 513 genomic scaffold H150DRAFT_scaffold00012.12, whole genome shotgun sequence
+86,451 bp linear DNA 
+KB908029.1 GI:482676268
+
+68. Woodsholea maritima DSM 17123 genomic scaffold H151DRAFT_scaffold00001.1, whole genome shotgun sequence
+1,156,223 bp linear DNA 
+KB908056.1 GI:482676299
+
+69. Pannonibacter phragmitetus DSM 14782 genomic scaffold H163DRAFT_scaffold00005.5, whole genome shotgun sequence
+220,441 bp linear DNA 
+KB908219.1 GI:482676474
+
+70. Rhizobium leguminosarum bv. viciae 248 RLEG17DRAFT_Scaffold1.7_C, whole genome shotgun sequence
+5,082,651 bp linear DNA 
+ARRT01000006.1 GI:482969597
+
+71. Methyloferula stellata AR4 strain AR4T A3OQDRAFT_chromosome1.1_C, whole genome shotgun sequence
+4,235,448 bp linear DNA 
+ARWA01000001.1 GI:482973020
+
+72. Thiomicrorhabdus sp. Kp2 A379DRAFT_chromosome1.1_C, whole genome shotgun sequence
+2,725,706 bp linear DNA 
+ARWI01000001.1 GI:482973234
+
+73. Methylotenera mobilis 13 genomic scaffold A391DRAFT_scaffold1.1, whole genome shotgun sequence
+2,803,787 bp linear DNA 
+KB913035.1 GI:483190898
+
+74. Hyphomicrobium zavarzinii ATCC 27496 strain ZV-622 genomic scaffold F812DRAFT_scaffold00010.10, whole genome shotgun sequence
+150,989 bp linear DNA 
+KB911264.1 GI:483196475
+
+75. Amycolatopsis orientalis DSM 40040 = KCTC 9412 contig_8, whole genome shotgun sequence
+126,875 bp linear DNA 
+ASJB01000001.1 GI:498752527
+
+76. Vibrio jasicida MWB 21 DNA, contig: contig0076, whole genome shotgun sequence
+48,168 bp linear DNA 
+BAOA01000076.1 GI:499314376
+
+77. Vibrio jasicida MWB 21 DNA, contig: contig0050, whole genome shotgun sequence
+120,104 bp linear DNA 
+BAOA01000050.1 GI:499314402
+
+78. Vibrio jasicida MWB 21 DNA, contig: contig0007, whole genome shotgun sequence
+333,318 bp linear DNA 
+BAOA01000007.1 GI:499314445
+
+79. Rhizobium leguminosarum bv. viciae GB30 A3A3DRAFT_scaffold_0.1_C, whole genome shotgun sequence
+541,500 bp linear DNA 
+ATTP01000001.1 GI:522804604
+
+80. Rhizobium mongolense USDA 1844 A3C3DRAFT_scaffold_36.37_C, whole genome shotgun sequence
+27,516 bp linear DNA 
+ATTQ01000037.1 GI:522804757
+
+81. Oceanicaulis alexandrii DSM 11625 G405DRAFT_scaffold00001.1_C, whole genome shotgun sequence
+2,621,375 bp linear DNA 
+ATUP01000001.1 GI:522807938
+
+82. Weissella halotolerans DSM 20190 G414DRAFT_scaffold00003.3_C, whole genome shotgun sequence
+146,971 bp linear DNA 
+ATUU01000003.1 GI:522808284
+
+83. Ponticaulis koreensis DSM 19734 G523DRAFT_scaffold00001.1_C, whole genome shotgun sequence
+2,348,061 bp linear DNA 
+ATVJ01000001.1 GI:522809007
+
+84. Tepidiphilus margaritifer DSM 15129 H607DRAFT_scaffold00004.4_C, whole genome shotgun sequence
+303,648 bp linear DNA 
+AUDR01000015.1 GI:523392555
+
+85. Tepidiphilus margaritifer DSM 15129 H607DRAFT_scaffold00002.2_C, whole genome shotgun sequence
+375,818 bp linear DNA 
+AUDR01000013.1 GI:523392557
+
+86. Bradyrhizobium sp. Cp5.3 K289DRAFT_scaffold00001.1_C, whole genome shotgun sequence
+666,645 bp linear DNA 
+AUFA01000001.1 GI:523394552
+
+87. Bradyrhizobium sp. Ai1a-2 K288DRAFT_scaffold00038.38_C, whole genome shotgun sequence
+83,079 bp linear DNA 
+AUEZ01000039.1 GI:523394598
+
+88. Cupriavidus sp. amp6 K309DRAFT_scaffold00004.4_C, whole genome shotgun sequence
+227,462 bp linear DNA 
+AUFE01000004.1 GI:523395475
+
+89. Moraxella caprae DSM 19149 K941DRAFT_scaffold00005.5_C, whole genome shotgun sequence
+102,637 bp linear DNA 
+AUGF01000006.1 GI:523396509
+
+90. Tetragenococcus muriaticus DSM 15685 G577DRAFT_scaffold00001.1_C, whole genome shotgun sequence
+186,503 bp linear DNA 
+AUIQ01000001.1 GI:523400078
+
+91. Chryseobacterium daeguense DSM 19388 H560DRAFT_scaffold00021.21_C, whole genome shotgun sequence
+35,778 bp linear DNA 
+AUMT01000022.1 GI:523610574
+
+92. Chryseobacterium daeguense DSM 19388 H560DRAFT_scaffold00018.18_C, whole genome shotgun sequence
+57,414 bp linear DNA 
+AUMT01000019.1 GI:523610586
+
+93. Sinorhizobium arboris LMG 14919 SinarDRAFT_Scaffold4.4_C, whole genome shotgun sequence
+685,926 bp linear DNA 
+ATYB01000009.1 GI:523611083
+
+94. Rhizobium sullae WSM1592 A3C1DRAFT_scaffold_86.87_C, whole genome shotgun sequence
+4,385 bp linear DNA 
+ATZB01000088.1 GI:523612843
+
+95. Azovibrio restrictus DSM 23866 G474DRAFT_scaffold00009.9_C, whole genome shotgun sequence
+189,134 bp linear DNA 
+AUCH01000009.1 GI:523620012
+
+96. Desulfogranum japonicum DSM 18378 G493DRAFT_scaffold00005.5_C, whole genome shotgun sequence
+209,552 bp linear DNA 
+AUCV01000005.1 GI:523621075
+
+97. Methylocapsa acidiphila B2 genomic scaffold MetacDRAFT_Scaffold1.2, whole genome shotgun sequence
+3,916,740 bp linear DNA 
+KE386496.1 GI:523639202
+
+98. Photobacterium leiognathi lrivu.4.1 DNA, contig: plContig045, whole genome shotgun sequence
+9,087 bp linear DNA 
+BANQ01000045.1 GI:531072433
+
+99. Xanthomonas cassavae CFBP 4642 chromosome, whole genome shotgun sequence
+5,197,712 bp circular DNA 
+CM002139.1 GI:537096072
+
+100. Candidatus Schmidhempelia bombi str. Bimp ctg820001289395, whole genome shotgun sequence
+31,229 bp linear DNA 
+AWGA01000016.1 GI:545698705
+
+101. Helicobacter pylori SA213A WGS project data, contig SA213A_012, whole genome shotgun sequence
+47,114 bp linear DNA 
+CBOM010000012.1 GI:546855104
+
+102. Mesorhizobium erdmanii USDA 3471 A3AUDRAFT_scaffold_2.3_C1, whole genome shotgun sequence
+102,550 bp linear DNA 
+AXAE01000006.1 GI:548692156
+
+103. Mesorhizobium loti CJ3sym A3A9DRAFT_scaffold_3.4_C1, whole genome shotgun sequence
+150,632 bp linear DNA 
+AXAL01000004.1 GI:548692932
+
+104. Bradyrhizobium sp. WSM3983 YUADRAFT_scaffold_40.41_C, whole genome shotgun sequence
+56,095 bp linear DNA 
+AXAY01000044.1 GI:548697279
+
+105. Bradyrhizobium sp. WSM1743 YU9DRAFT_scaffold_40.41_C, whole genome shotgun sequence
+65,087 bp linear DNA 
+AXAZ01000045.1 GI:548697988
+
+106. Synechococcus sp. NKBG15041c DNA, contig; Contig33, whole genome shotgun sequence
+14,361 bp linear DNA 
+BAUB01000033.1 GI:551232559
+
+107. Tenacibaculum maritimum NCIMB 2154 DNA, contig: TMA01S_CON06020, whole genome shotgun sequence
+120,088 bp linear DNA 
+BAUG01000008.1 GI:554476084
+
+108. Rhodoferax saidenbachensis ED16 contig06, whole genome shotgun sequence
+90,869 bp linear DNA 
+AWQR01000006.1 GI:558869907
+
+109. Ensifer aridi strain TW10 SinTW10DRAFT_scaffold_10.11_C, whole genome shotgun sequence
+201,494 bp linear DNA 
+AZNX01000012.1 GI:567126982
+
+110. Methylosinus sp. LW3 METLW3DRAFT_contig1.1_C, whole genome shotgun sequence
+4,004,193 bp linear DNA 
+AZUO01000001.1 GI:570956126
+
+111. Ensifer sp. WSM1721 SinteDRAFT_scaffold_16.17_C, whole genome shotgun sequence
+112,748 bp linear DNA 
+This sequence has been updated. See .
+AZUW01000020.1 GI:570972402
+
+112. Methylophilus sp. 5 genomic scaffold scaffold1, whole genome shotgun sequence
+3,033,021 bp linear DNA 
+KI911560.1 GI:571796892
+
+113. Promicromonospora kroppenstedtii DSM 19349 genomic scaffold ProkrDRAFT_PKA.197, whole genome shotgun sequence
+49,915 bp linear DNA 
+KI911670.1 GI:571796996
+
+114. Mesorhizobium loti R88b genomic scaffold Meslo2DRAFT_Scaffold1.1, whole genome shotgun sequence
+7,195,110 bp linear DNA 
+KI912159.1 GI:572725468
+
+115. Rhodospirillales bacterium URHD0088 N544DRAFT_scaffold00003.3_C, whole genome shotgun sequence
+524,663 bp linear DNA 
+Record removed. This record was removed at the submitter's request because the corresponding paper has not yet been published.
+JADL01000003.1 GI:573086489
+
+116. Bacillus sp. J33 BacJ33DRAFT_c107_C, whole genome shotgun sequence
+17,800 bp linear DNA 
+JAEL01000112.1 GI:573088009
+
+117. Chelativorans sp. J32 CheJ32DRAFT_scaffold_13.14_C, whole genome shotgun sequence
+123,292 bp linear DNA 
+JAEQ01000014.1 GI:573088334
+
+118. Dechloromonas agitata is5 genomic scaffold K420DRAFT_scaffold00001.1, whole genome shotgun sequence
+3,627,226 bp linear DNA 
+KI912532.1 GI:573678495
+
+119. Xanthobacter sp. 126 XAN126DRAFT_chromosome1.1_C, whole genome shotgun sequence
+5,472,264 bp linear DNA 
+JAFO01000001.1 GI:573972604
+
+120. Hydrogenovibrio kuenenii DSM 12350 N745DRAFT_scf7180000000004_quiver.1_C, whole genome shotgun sequence
+2,449,025 bp linear DNA 
+JAGP01000001.1 GI:573973117
+
+121. Aquimarina megaterium XH134 contig167_scaffold115, whole genome shotgun sequence
+326 bp linear DNA 
+JACB01000167.1 GI:574613608
+
+122. Aquimarina macrocephali JAMB N27 contig56_scaffold31, whole genome shotgun sequence
+53,907 bp linear DNA 
+JACA01000056.1 GI:574613940
+
+123. Aquimarina megaterium XH134 contig45_scaffold20, whole genome shotgun sequence
+391 bp linear DNA 
+JACB01000045.1 GI:574613974
+
+124. Aquimarina megaterium XH134 contig44_scaffold20, whole genome shotgun sequence
+85,099 bp linear DNA 
+JACB01000044.1 GI:574613977
+
+125. Aquimarina macrocephali JAMB N27 contig41_scaffold19, whole genome shotgun sequence
+131,466 bp linear DNA 
+JACA01000041.1 GI:574613987
+
+126. Aquimarina macrocephali JAMB N27 contig40_scaffold19, whole genome shotgun sequence
+240 bp linear DNA 
+JACA01000040.1 GI:574613990
+
+127. Aquimarina macrocephali JAMB N27 contig39_scaffold19, whole genome shotgun sequence
+257 bp linear DNA 
+JACA01000039.1 GI:574613993
+
+128. Aquimarina macrocephali JAMB N27 contig14_scaffold7, whole genome shotgun sequence
+228,126 bp linear DNA 
+JACA01000014.1 GI:574614056
+
+129. Aquimarina megaterium XH134 contig3_scaffold2, whole genome shotgun sequence
+498,159 bp linear DNA 
+JACB01000003.1 GI:574614077
+
+130. Methylophilus sp. OH31 DNA, contig: MPOH31a02, whole genome shotgun sequence
+993,349 bp linear DNA 
+BAUS01000002.1 GI:586588632
+
+131. Thioalkalivibrio sp. HK1 contig22482, whole genome shotgun sequence
+65,610 bp linear DNA 
+JFBG01000083.1 GI:589095701
+
+132. Cobetia crustatorum strain JO1 contig_99, whole genome shotgun sequence
+31,401 bp linear DNA 
+JEMF01000099.1 GI:594637304
+
+133. Pantoea sp. IMH Scaffold1_5, whole genome shotgun sequence
+1,252,620 bp linear DNA 
+JFGT01000005.1 GI:597718330
+
+134. Lacticaseibacillus casei DSM 20011 = JCM 1134 = ATCC 393 DNA, contig: JCM1134.contig00009, whole genome shotgun sequence
+69,899 bp linear DNA 
+BALS01000009.1 GI:602600720
+
+135. Shewanella marina JCM 15074 DNA, contig: JCM15074.contig00006, whole genome shotgun sequence
+169,972 bp linear DNA 
+BALM01000006.1 GI:602605217
+
+136. Bradyrhizobium sp. DOA9 DNA, contig: Scaffold2_3, whole genome shotgun sequence
+259,187 bp linear DNA 
+BAWE01000003.1 GI:604719056
+
+137. Nitrosospira briensis C-128 F822DRAFT_scaffold00003.3_C, whole genome shotgun sequence
+394,139 bp linear DNA 
+Record removed. This WGS project has been superceded by the complete genome in CP012371
+JHVX01000003.1 GI:607821794
+
+138. Sulfurihydrogenibium subterraneum DSM 15120 Q385DRAFT_scaffold00001.1_C, whole genome shotgun sequence
+436,944 bp linear DNA 
+JHUV01000008.1 GI:607821977
+
+139. Acidobacteriaceae bacterium KBS 146 M015DRAFT_scf7180000000004_quiver.1_C, whole genome shotgun sequence
+4,996,384 bp linear DNA 
+JHVA01000001.1 GI:607822051
+
+140. Simplicispira psychrophila DSM 11588 Q390DRAFT_scaffold00002.2_C, whole genome shotgun sequence
+390,328 bp linear DNA 
+JHYS01000002.1 GI:607832733
+
+141. Afifella pfennigii DSM 17143 Q331DRAFT_scaffold00018.18_C, whole genome shotgun sequence
+75,631 bp linear DNA 
+JHZK01000018.1 GI:607832912
+
+142. Nitrosomonas cryotolerans ATCC 49181 G345DRAFT_scaffold00036.36_C, whole genome shotgun sequence
+27,130 bp linear DNA 
+Record removed. This record was removed at the submitter's request because it is redundant with another sequence submission from that submitter.
+JIBI01000037.1 GI:607833325
+
+143. Thiothrix lacustris DSM 21227 Q394DRAFT_scaffold00004.4_C2, whole genome shotgun sequence
+165,889 bp linear DNA 
+JHYQ01000005.1 GI:607835170
+
+144. Serratia sp. H1n Contig10, whole genome shotgun sequence
+95,997 bp linear DNA 
+AYMN01000010.1 GI:613816620
+
+145. Lonsdalea quercina subsp. quercina strain NCCB 100489 Contig4, whole genome shotgun sequence
+252,083 bp linear DNA 
+JIBP01000004.1 GI:632992602
+
+146. Persephonella sp. IF05-L8 strain IFO5_L8 BO13DRAFT_scf7180000000011_quiver.5_C, whole genome shotgun sequence
+569,858 bp linear DNA 
+JNLJ01000005.1 GI:651606936
+
+147. Persephonella sp. KM09-Lau-8 strain KM09_Lau8 BO11DRAFT_scf7180000000004_quiver_dupTrim_3231.1_C, whole genome shotgun sequence
+1,910,985 bp linear DNA 
+JNLL01000001.1 GI:651606971
+
+148. Thiomicrospira sp. Milos-T2 genomic scaffold BS34DRAFT_scaffold00001.1, whole genome shotgun sequence
+2,211,915 bp linear DNA 
+KL370891.1 GI:651703705
+
+149. Leuconostoc lactis strain KACC 91922 337.Llac.1_9, whole genome shotgun sequence
+74,660 bp linear DNA 
+JMEA01000009.1 GI:656998416
+
+150. Thiomicrospira pelophila DSM 1534 N746DRAFT_scf7180000000002_quiver_dupTrim_9340.1_C, whole genome shotgun sequence
+2,108,215 bp linear DNA 
+JOMR01000001.1 GI:658654320
+
+151. Andreprevotia chitinilytica DSM 18519 BR41DRAFT_scaffold00001.1_C, whole genome shotgun sequence
+610,461 bp linear DNA 
+JONM01000001.1 GI:658749831
+
+152. Weissella hellenica DNA, contig: contig00006, strain: Wikim14, whole genome shotgun sequence
+164,601 bp linear DNA 
+BBIK01000006.1 GI:659919256
+
+153. Saccharothrix sp. NRRL B-16314 contig22.1, whole genome shotgun sequence
+237,166 bp linear DNA 
+JNXC01000022.1 GI:661820318
+
+154. Saccharothrix syringae strain NRRL B-16468 contig21.1, whole genome shotgun sequence
+146,927 bp linear DNA 
+JNYO01000021.1 GI:661842299
+
+155. Saccharothrix syringae strain NRRL B-16468 contig8.1, whole genome shotgun sequence
+616,341 bp linear DNA 
+JNYO01000008.1 GI:661842345
+
+156. Herbidospora cretacea strain NRRL B-16917 contig7.1, whole genome shotgun sequence
+1,140,845 bp linear DNA 
+JODQ01000007.1 GI:661969208
+
+157. Lentzea albidocapillata strain NRRL B-24057 contig14.1, whole genome shotgun sequence
+705,060 bp linear DNA 
+JOEA01000014.1 GI:661970550
+
+158. Mycetocola saprophilus strain NRRL B-24119 contig2.1, whole genome shotgun sequence
+1,442,098 bp linear DNA 
+JOEC01000002.1 GI:661970626
+
+159. Oerskovia turbata strain NRRL B-8019 contig8.1, whole genome shotgun sequence
+287,154 bp linear DNA 
+JOFV01000008.1 GI:661979840
+
+160. Streptomyces sp. NRRL S-37 contig17.1, whole genome shotgun sequence
+308,426 bp linear DNA 
+JOIZ01000017.1 GI:661993254
+
+161. Lechevalieria aerocolonigenes strain NRRL B-16138 genomic scaffold P325_Doro1_scaffold38, whole genome shotgun sequence
+64,697 bp linear DNA 
+KL590506.1 GI:662091798
+
+162. Caballeronia sordidicola strain S170 NODE_63, whole genome shotgun sequence
+44,839 bp linear DNA 
+JNFG01000049.1 GI:665768013
+
+163. Lysobacter antibioticus strain 13-6 Contig_68, whole genome shotgun sequence
+70,028 bp linear DNA 
+JMTZ01000068.1 GI:666384872
+
+164. Vibrio diazotrophicus NBRC 103148 DNA, contig: VDI01S_CON016010, whole genome shotgun sequence
+128,648 bp linear DNA 
+BBJY01000017.1 GI:670448988
+
+165. Carnobacterium alterfunditum DSM 5972 strain pf4 BR50DRAFT_scf7180000000014_quiver_dupTrim_6666.4_C, whole genome shotgun sequence
+2,470,948 bp linear DNA 
+JQLG01000004.1 GI:675281311
+
+166. Carnobacterium funditum DSM 5970 strain pf3 BR44DRAFT_scf7180000000006_quiver_dupTrim_9421.1_C, whole genome shotgun sequence
+2,329,297 bp linear DNA 
+JQLL01000001.1 GI:675281337
+
+167. Carnobacterium divergens DSM 20623 strain 66 BR52DRAFT_scf7180000000002_quiver_dupTrim_7960.1_C, whole genome shotgun sequence
+2,619,222 bp linear DNA 
+JQLO01000001.1 GI:675281345
+
+168. Carnobacterium pleistocenium FTR1 BP17DRAFT_scf7180000000008_quiver_dupTrim_9589.2_C, whole genome shotgun sequence
+2,625,711 bp linear DNA 
+JQLQ01000002.1 GI:675281363
+
+169. Carnobacterium gallinarum DSM 4847 strain MT44 BR43DRAFT_scf7180000000012_quiver.5_C, whole genome shotgun sequence
+3,037,612 bp linear DNA 
+JQLU01000005.1 GI:675281379
+
+170. Carnobacterium gallinarum DSM 4847 strain MT44 BR43DRAFT_scf7180000000013_quiver.4_C, whole genome shotgun sequence
+447,546 bp linear DNA 
+JQLU01000004.1 GI:675281384
+
+171. Methylotenera sp. L2L1 FG24DRAFT_unitig_0_quiver.1_C, whole genome shotgun sequence
+2,641,989 bp linear DNA 
+JQMG01000001.1 GI:675281728
+
+172. Rhizobium sp. CF097 EW87DRAFT_scaffold00028.28_C, whole genome shotgun sequence
+104,202 bp linear DNA 
+Record removed. This record was removed at the submitter's request because the corresponding paper has not yet been published.
+JQMF01000028.1 GI:675281734
+
+173. Porticoccus hydrocarbonoclasticus MCTG13d U740DRAFT_scf7180000000004_quiver_dupTrim_6659.1_C, whole genome shotgun sequence
+2,474,654 bp linear DNA 
+JQMM01000001.1 GI:675281836
+
+174. Carnobacterium mobile DSM 4848 strain MT37L BR87DRAFT_scf7180000000018_quiver_dupTrim_8950.1_C, whole genome shotgun sequence
+2,553,405 bp linear DNA 
+JQMR01000001.1 GI:675281861
+
+175. Hydrogenovibrio sp. Milos-T1 L868DRAFT_scf7180000000002_quiver.1_C, whole genome shotgun sequence
+2,344,434 bp linear DNA 
+Record removed. This record was removed at the submitter's request because the corresponding paper has not yet been published.
+JQMT01000001.1 GI:675281866
+
+176. Methylosinus sp. PW1 K369DRAFT_unitig_19_quiver.6_C, whole genome shotgun sequence
+2,921,845 bp linear DNA 
+JQNK01000009.1 GI:675281950
+
+177. Massilia sp. 9096 FA90DRAFT_scf7180000000010_quiver.1_C, whole genome shotgun sequence
+5,554,448 bp linear DNA 
+JQNN01000001.1 GI:675281976
+
+178. Stenoxybacter acetivorans DSM 19021 Q384DRAFT_scaffold00027.27_C, whole genome shotgun sequence
+29,838 bp linear DNA 
+JQKE01000031.1 GI:675283866
+
+179. Methylocapsa aurea strain KYG DL86DRAFT_scaffold00006.6_C, whole genome shotgun sequence
+227,045 bp linear DNA 
+JQKO01000008.1 GI:675284948
+
+180. Acinetobacter gerneri DNA, contig: Age01S_CON00004, strain: KCTC 12415, whole genome shotgun sequence
+114,735 bp linear DNA 
+BBLI01000004.1 GI:675286318
+
+181. Erythrobacter vulgaris genome assembly IDBA-UD, contig contig000001, whole genome shotgun sequence
+971,547 bp linear DNA 
+CCSI01000001.1 GI:683286132
+
+182. Myxosarcina sp. GI1 contig_2, whole genome shotgun sequence
+168,543 bp linear DNA 
+JRFE01000003.1 GI:685984679
+
+183. Myxosarcina sp. GI1 contig_0, whole genome shotgun sequence
+195,043 bp linear DNA 
+JRFE01000001.1 GI:685984681
+
+184. Citrobacter sedlakii NBRC 105722 DNA, contig: CSE01S_CON00111, whole genome shotgun sequence
+142,472 bp linear DNA 
+BBNB01000015.1 GI:690916304
+
+185. Streptomyces galbus strain KCCM 41354 contig00060, whole genome shotgun sequence
+595,882 bp linear DNA 
+JRHJ01000055.1 GI:704649402

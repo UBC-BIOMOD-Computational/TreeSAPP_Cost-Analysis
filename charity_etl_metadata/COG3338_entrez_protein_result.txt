@@ -1,0 +1,24 @@
+
+1. carbonic anhydrase precursor [Halalkalibacterium halodurans C-125]
+275 aa protein
+BAB04079.1 GI:10172973
+
+2. a-type carbonic anhydrase [Mesorhizobium japonicum MAFF 303099]
+250 aa protein
+BAB52690.1 GI:14026092
+
+3. carbonic anhydrase [Nostoc sp. PCC 7120 = FACHB-418]
+264 aa protein
+BAB74628.1 GI:17132023
+
+4. cah [Bradyrhizobium diazoefficiens USDA 110]
+291 aa protein
+BAC46402.1 GI:27349388
+
+5. carbonic anhydrase [Vibrio parahaemolyticus RIMD 2210633]
+239 aa protein
+BAC61564.1 GI:28808359
+
+6. carbonic anhydrase [Vibrio parahaemolyticus RIMD 2210633]
+238 aa protein
+BAC62845.1 GI:28809904
