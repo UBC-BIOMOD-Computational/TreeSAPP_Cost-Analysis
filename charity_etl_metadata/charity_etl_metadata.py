@@ -86,6 +86,21 @@ def parse_ncbi_batch_entrez_nuccore(output_filename, output_csv):
     df = pd.DataFrame(df_json)
     df.to_csv(output_csv, index=False)
 
+def parse_ncbi_batch_entrez(nuccore_file, protein_file, output_csv):
+    parse_ncbi_batch_entrez_nuccore(f'{eggnog_lib}_entrez_nuccore_result.txt', f'{eggnog_lib}_entrez_output_nuccore.csv')
+    #parse_ncbi_batch_entrez_protein('COG3338_entrez_protein_result.txt', f'{eggnog_lib}_entrez_output_protein.csv')
+
+def retrieve_filtered_fasta_files_for_treesapp(filtered_csv, inputfasta_csv, output_fasta):
+    df = pd.read_csv(inputfasta_csv)
+    df_to_join = pd.read_csv(filtered_csv)
+
+    merged_df = pd.merge(df, df_to_join, on='accession_number', how='inner')
+    with open(output_fasta, 'w') as fasta:
+        for _, row in df.iterrows():
+            header = f">{row['id']}.{row['accession_number']}{f'_gene{row['gene']}' if row['gene'] else ''}"
+            sequence = row['aa_sequence']
+            fasta.write(f"{header}\n{sequence}")
+
 
 
 eggnog_lib = 'COG3338'
@@ -97,8 +112,9 @@ eggnog_lib = 'COG3338'
 # Manually import 'entrez_input.txt' into NCBI Batch Entrez Nuccore Query 
 # > entrez_nuccore_result.txt
 
-parse_ncbi_batch_entrez_nuccore(f'{eggnog_lib}_entrez_nuccore_result.txt', f'{eggnog_lib}_entrez_output_nuccore.csv')
-# parse_ncbi_batch_entrez_protein('COG3338_entrez_protein_result.txt', f'{eggnog_lib}_entrez_output_protein.csv')
+# parse_ncbi_batch_entrez(f'{eggnog_lib}_entrez_nuccore_result.txt', f'{eggnog_lib}_entrez_protein_result.txt', f'{eggnog_lib}_entrez_output.csv')
+
+retrieve_filtered_fasta_files_for_treesapp(f'{eggnog_lib}_entrez_output.csv', f'{eggnog_lib}_fasta_output.csv', f'{eggnog_lib}_treesapp_fasta.txt')
 
 
 # =============== EGGNOG EMAPPER =================
