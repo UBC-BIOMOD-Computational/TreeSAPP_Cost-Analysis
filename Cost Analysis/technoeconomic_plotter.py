@@ -8,8 +8,8 @@ def create_protein(time_hours: int):
         'protein in g': 12 * time_hours
     }
 
-# Generate sample data for a range of time values
-time_values = list(range(1, 6))  # Example time inputs: 1 to 5 hours
+# Generate data using formulas for a range of hours
+time_values = list(range(1, 6))  # Example time inputs: 1 to 5 hours. Read documentation for range() to understand why 6th hour doesn't count.
 protein_yield = []
 cost = []
 time = []
@@ -20,7 +20,7 @@ for t in time_values:
     cost.append(result['cost in $'])
     time.append(t)
 
-# Print out the generated data (optional)
+# Print out the generated data (just for Charity debugging)
 print("Time (hr):", time)
 print("Protein Yield (g):", protein_yield)
 print("Cost ($):", cost)
@@ -53,6 +53,6 @@ axs[2].set_ylabel('g per ($·hour)')
 axs[2].set_xlabel('Sample Index')
 axs[2].set_xticks(x)
 
-# Final layout tweaks
-plt.tight_layout()
+# add spacing between subplots
+plt.tight_layout(pad=2.0)
 plt.show()

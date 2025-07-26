@@ -17,3 +17,5 @@
 
 3. run the script in the terminal
 - `python technoeconomic_plotter.py` or `python3 technoeconomic_plotter.py` depending on your python version
+
+4. modify the function `create_protein` for your calculation
