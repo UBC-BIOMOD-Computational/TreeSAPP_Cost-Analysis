@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
+initial_investment_cost = 1000  # Example initial investment cost in dollars
+
 def create_protein(time_hours: int):
     """TODO for Cost Analysis team: Change the logic here to reflect the actual protein production process."""
     return {
@@ -17,7 +19,7 @@ time = []
 for t in time_values:
     result = create_protein(t)
     protein_yield.append(result['protein in g'])
-    cost.append(result['cost in $'])
+    cost.append(result['cost in $'] + initial_investment_cost)
     time.append(t)
 
 # Print out the generated data (just for Charity debugging)
