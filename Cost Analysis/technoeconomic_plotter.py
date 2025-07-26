@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-def create_protein(time: int):
+def create_protein(time_hours: int):
     """TODO for Cost Analysis team: Change the logic here to reflect the actual protein production process."""
     return {
-        'cost in $': 232 * time,
-        'protein in g': 12 * time
+        'cost in $': 232 * time_hours,
+        'protein in g': 12 * time_hours
     }
 
 # Generate sample data for a range of time values
@@ -43,13 +43,13 @@ axs[0].set_xticks(x)
 # Time Efficiency Plot
 axs[1].plot(x, time_efficiency, marker='s', color='green')
 axs[1].set_title('Time Efficiency')
-axs[1].set_ylabel('g per day')
+axs[1].set_ylabel('g per hour')
 axs[1].set_xticks(x)
 
 # Production Efficiency Plot
 axs[2].plot(x, production_efficiency, marker='^', color='red')
 axs[2].set_title('Production Efficiency')
-axs[2].set_ylabel('g per ($·day)')
+axs[2].set_ylabel('g per ($·hour)')
 axs[2].set_xlabel('Sample Index')
 axs[2].set_xticks(x)
 
