@@ -28,6 +28,7 @@ def generate_technoeconomic_data(config_data):
 if __name__ == "__main__":
     with open('cost_analysis_config.json') as f:
         config_data_all = json.load(f)
-    config_data = config_data_all["Industry CBPP"]
-    df = generate_technoeconomic_data(config_data)
-    df.to_csv(config_data["name"] + '.csv', index=False)
+
+    for config_data in config_data_all.values():
+        df = generate_technoeconomic_data(config_data)
+        df.to_csv('data/' + config_data["name"] + '.csv', index=False)
