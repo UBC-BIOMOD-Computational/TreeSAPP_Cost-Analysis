@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-initial_investment_cost = 173750   # Example initial investment cost in dollars
+initial_investment_cost = 87350 + 20534 per cycle   # Example initial investment cost in dollars
 
 def create_protein(time_hours: int):
     """TODO for Cost Analysis team: Change the logic here to reflect the actual protein production process."""

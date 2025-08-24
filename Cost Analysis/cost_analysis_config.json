@@ -1,0 +1,38 @@
+{ 
+    "Lab CFPP":
+    {
+        "name": "Lab CFPP",
+        "num_cycles": 100,
+        "initial_cost": 87350,
+        "cycle_cost": 20534,
+        "cycle_time": 40,
+        "protein_per_cycle_mg": 200000 
+    },
+    "Industry CFPP":
+    {
+        "name": "Industry CFPP",
+        "num_cycles": 100,
+        "initial_cost": 173750,
+        "cycle_cost": 200060,
+        "cycle_time": 40,
+        "protein_per_cycle_mg": 2000000
+    },
+    "Lab CBPP":
+    {
+        "name": "Lab CBPP",
+        "num_cycles": 100,
+        "initial_cost": 60000 ,
+        "cycle_cost":  1278,
+        "cycle_time": 36,
+        "protein_per_cycle_mg": 200000 
+    },
+    "Industry CBPP":
+    {
+        "name": "Industry CBPP",
+        "num_cycles": 100,
+        "initial_cost": 223000 ,
+        "cycle_cost": 12780,
+        "cycle_time": 38,
+        "protein_per_cycle_mg": 2000000
+    }
+}
