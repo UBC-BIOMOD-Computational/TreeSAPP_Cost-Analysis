@@ -2,41 +2,54 @@ import conversion as cv
 import pandas as pd
 import numpy as np
 
-final_costs_df = pd.DataFrame(columns=[
-        "name",
-        "num_cycles",
-        "initial_cost",
-        "cycle_cost_$",
-        "cycle_time_hours",
-        "protein_per_cycle_mg"
-        ])
+final_costs_dict = []
 
 ## =================================================================
 ## CELL FREE =======================================================
 
 #  Cell Free Lab ---------------------------------------------------
-cfpp_df = pd.read_csv("data/CBPP_lab_20kg_100cycles.csv")
+cfpp_df = pd.read_csv("data/CFPP_lab_20kg_100cycles.csv")
+def cfpp_lab(name):
+    return cfpp_df.loc[cfpp_df['name'] == name, 'value'].iloc[0]
 
 '''
-cfpp_initial_cost = mold equipment + photoresist + 24L pdms
+cfpp_initial_cost = mold equipment + photoresist + pdms for mold creation
 '''
-cfpp_initial_cost = 0
+cfpp_initial_cost = 77000 + 750 + cfpp_lab('Total PDMS Volume') * 340
 
 '''
-"$/per cycle = 9448.16
-= 437 + 7404 + 22 + 53.4 + 1231.76 + 300 
-= 200/3 mL of lysate
-+ 74.048mg of dna at $100/mg
-+ 2 mL T4 Ligase for 243units/$1
-+ 5.34 mL T4 Ligase buffer for $10/mL
-+ 61588 units of ApaI for 50 units/$1
-+ 3079.4 ug of plasmid purified (7500ug for $300)"
+"$/per cycle = 
+=  lysate at 602CAD/0.5L
++ dna sequences for xdna arms at $100/mg
++ T4 Ligase for 243units/$1
++ T4 Ligase buffer for $10/mL
++ ApaI for 50 units/$1
++ plasmid purified (7500ug for $300)"
 '''
+cost_lysate = cfpp_lab('Total Lysate') * 2 * 602
+cost_xdna = cv.convert_units_grams(cfpp_lab('Total xDNA'), 'ug', 'mg') * 100
+cost_t4_ligase = cfpp_lab('Total T4 Ligase') / 243
+cost_t4_buffer = cfpp_lab('Total T4 Ligase Buffer') * 10
+cost_apaI = cfpp_lab('Total ApaI Volume') / 50
+cost_plasmid = cv.convert_units_grams(cfpp_lab('Total Gene Plasmid'), 'ng', 'ug') / 7500 * 300
+print('cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid')
+print(cost_lysate, cost_xdna, cost_t4_ligase, cost_t4_buffer, cost_apaI, cost_plasmid)
+cfpp_per_cycle_cost = cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid
 
 '''
 "t = 40h (pipelined into upstream + downstream) 
 *not including initial mold making"
 '''
+cfpp_time = 40
+
+final_costs_dict.append({
+    "name": "CFPP Lab",
+    "num_cycles": cfpp_lab('Total Cycles'),
+    "initial_cost": cfpp_initial_cost,
+    "cycle_cost_$": cfpp_per_cycle_cost,
+    "cycle_time_hours": cfpp_time,
+    "protein_per_cycle_mg": 200 / 3
+})
 
 #  Cell Free Industry ----------------------------------------------
 
@@ -76,3 +89,10 @@ Glucose 120g + 117.647059 mg of IPTG "
 #  Cell Based Prototype --------------------------------------------
 
 #  Cell Based Prototype (Switching Proteins) -----------------------
+
+
+## =================================================================
+## EXPORT ==========================================================
+
+final_costs_df = pd.DataFrame(final_costs_dict)
+final_costs_df.to_csv("data/final_costs.csv", index=False)

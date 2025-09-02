@@ -11,8 +11,8 @@ Park, N., Kahn, J., Rice, E. et al. High-yield cell-free protein production from
 df = pd.DataFrame(columns=['section', 'section_time', 'name', 'value', 'unit'])
 
 ## Cell-Free Protein Expression Starting Requirements ======================
-target_protein_annual = {'name': 'Target Protein', 'value': 0.001, 'unit': 'kg'}
-cycles = {'name': 'Total Cycles', 'value': 10, 'unit': 'cycles'}
+target_protein_annual = {'name': 'Target Protein', 'value': 20, 'unit': 'kg'}
+cycles = {'name': 'Total Cycles', 'value': 100, 'unit': 'cycles'}
 target_protein = {'name': 'Target Protein Per Cycle', 'value': cv.convert_units_grams(target_protein_annual['value'] / cycles['value'], 'kg', 'g'), 'unit': 'g'}
 
 df1 = pd.DataFrame([target_protein_annual, cycles, target_protein])
