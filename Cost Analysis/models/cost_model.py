@@ -244,7 +244,49 @@ final_costs_dict.append({
 
 #  Cell Free Prototype (recycle mpads) -----------------------------
 
-#  Cell Free Prototype (recycle mpads) (Switching Proteins) --------
+
+cfpp_proto_df = pd.read_csv("data/CFPP_prototype_10g_10cycles.csv")
+def cfpp_proto(name):
+    return cfpp_proto_df.loc[cfpp_proto_df['name'] == name, 'value'].iloc[0]
+
+'''
+cfpp_initial_cost = mold equipment + photoresist + pdms for mold creation
+'''
+cfpp_initial_cost = 77000 + 750 + cfpp_proto('Total PDMS Volume') * 340
+
+'''
+"$/per cycle = 
+=  lysate at 800CAD/1L
++ dna sequences for xdna arms at $100/mg
++ T4 Ligase for 243units/$1
++ T4 Ligase buffer for $10/mL
++ ApaI for 50 units/$1
++ plasmid purified (7500ug for $300)"
+'''
+cost_lysate = cfpp_proto('Total Lysate') * 800
+cost_xdna = cv.convert_units_grams(cfpp_proto('Total xDNA'), 'ug', 'mg') * 100 / 2 # recycling mpads cuts xdna cost in half
+cost_t4_ligase = cfpp_proto('Total T4 Ligase') / 243 / 2 # recycling mpads cuts T4 ligase cost in half
+cost_t4_buffer = cfpp_proto('Total T4 Ligase Buffer') * 10 / 2 # recycling mpads cuts T4 buffer cost in half
+cost_apaI = cfpp_proto('Total ApaI Volume') / 50 / 2 # recycling mpads cuts ApaI cost in half
+cost_plasmid = cv.convert_units_grams(cfpp_proto('Total Gene Plasmid'), 'ng', 'ug') / 7500 * 300 / 2 # recycling mpads cuts plasmid cost in half
+# cfpp # print('cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid')
+# cfpp # print(cost_lysate, cost_xdna, cost_t4_ligase, cost_t4_buffer, cost_apaI, cost_plasmid)
+cfpp_per_cycle_cost = cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid
+
+'''
+"t = 40h (pipelined into upstream + downstream) 
+*not including initial mold making"
+'''
+cfpp_time = 40
+
+final_costs_dict.append({
+    "name": "CFPP Prototype (recycle mpads)",
+    "num_cycles": cfpp_proto('Total Cycles'),
+    "initial_cost": cfpp_initial_cost,
+    "cycle_cost_$": cfpp_per_cycle_cost,
+    "cycle_time_hours": cfpp_time,
+    "protein_per_cycle_mg": cfpp_proto('Target Protein Per Cycle')
+})
 
 
 ## =================================================================
