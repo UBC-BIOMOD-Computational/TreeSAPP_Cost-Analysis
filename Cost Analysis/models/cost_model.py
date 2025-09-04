@@ -19,21 +19,21 @@ cfpp_initial_cost = 77000 + 750 + cfpp_lab('Total PDMS Volume') * 340
 
 '''
 "$/per cycle = 
-=  lysate at 602CAD/0.5L
+=  lysate at 800CAD/1L
 + dna sequences for xdna arms at $100/mg
 + T4 Ligase for 243units/$1
 + T4 Ligase buffer for $10/mL
 + ApaI for 50 units/$1
 + plasmid purified (7500ug for $300)"
 '''
-cost_lysate = cfpp_lab('Total Lysate') * 2 * 602
+cost_lysate = cfpp_lab('Total Lysate') * 800
 cost_xdna = cv.convert_units_grams(cfpp_lab('Total xDNA'), 'ug', 'mg') * 100
 cost_t4_ligase = cfpp_lab('Total T4 Ligase') / 243
 cost_t4_buffer = cfpp_lab('Total T4 Ligase Buffer') * 10
 cost_apaI = cfpp_lab('Total ApaI Volume') / 50
 cost_plasmid = cv.convert_units_grams(cfpp_lab('Total Gene Plasmid'), 'ng', 'ug') / 7500 * 300
-print('cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid')
-print(cost_lysate, cost_xdna, cost_t4_ligase, cost_t4_buffer, cost_apaI, cost_plasmid)
+# cfpp # print('cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid')
+# cfpp # print(cost_lysate, cost_xdna, cost_t4_ligase, cost_t4_buffer, cost_apaI, cost_plasmid)
 cfpp_per_cycle_cost = cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid
 
 '''
@@ -52,7 +52,49 @@ final_costs_dict.append({
 })
 
 #  Cell Free Industry ----------------------------------------------
-# TODO 
+
+cfpp_ind_df = pd.read_csv("data/CFPP_industry_200kg_100cycles.csv")
+def cfpp_ind(name):
+    return cfpp_ind_df.loc[cfpp_ind_df['name'] == name, 'value'].iloc[0]
+
+'''
+cfpp_initial_cost = mold equipment + photoresist + pdms for mold creation
+'''
+cfpp_initial_cost = 77000 + 750 + cfpp_ind('Total PDMS Volume') * 340
+
+'''
+"$/per cycle = 
+=  lysate at 600CAD/1L
++ dna sequences for xdna arms at $100/mg
++ T4 Ligase for 243units/$1
++ T4 Ligase buffer for $10/mL
++ ApaI for 50 units/$1
++ plasmid purified (7500ug for $300)"
+'''
+cost_lysate = cfpp_ind('Total Lysate') * 600
+cost_xdna = cv.convert_units_grams(cfpp_ind('Total xDNA'), 'ug', 'mg') * 100
+cost_t4_ligase = cfpp_ind('Total T4 Ligase') / 243
+cost_t4_buffer = cfpp_ind('Total T4 Ligase Buffer') * 10
+cost_apaI = cfpp_ind('Total ApaI Volume') / 50
+cost_plasmid = cv.convert_units_grams(cfpp_ind('Total Gene Plasmid'), 'ng', 'ug') / 7500 * 300
+# cfpp # print('cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid')
+# cfpp # print(cost_lysate, cost_xdna, cost_t4_ligase, cost_t4_buffer, cost_apaI, cost_plasmid)
+cfpp_per_cycle_cost = cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid
+
+'''
+"t = 40h (pipelined into upstream + downstream) 
+*not including initial mold making"
+'''
+cfpp_time = 40
+
+final_costs_dict.append({
+    "name": "CFPP Industry",
+    "num_cycles": cfpp_ind('Total Cycles'),
+    "initial_cost": cfpp_initial_cost,
+    "cycle_cost_$": cfpp_per_cycle_cost,
+    "cycle_time_hours": cfpp_time,
+    "protein_per_cycle_mg": cfpp_ind('Target Protein Per Cycle')
+})
 
 
 #  Cell Free Prototype ---------------------------------------------
@@ -67,21 +109,21 @@ cfpp_initial_cost = 77000 + 750 + cfpp_proto('Total PDMS Volume') * 340
 
 '''
 "$/per cycle = 
-=  lysate at 602CAD/0.5L
+=  lysate at 800CAD/1L
 + dna sequences for xdna arms at $100/mg
 + T4 Ligase for 243units/$1
 + T4 Ligase buffer for $10/mL
 + ApaI for 50 units/$1
 + plasmid purified (7500ug for $300)"
 '''
-cost_lysate = cfpp_proto('Total Lysate') * 2 * 602
+cost_lysate = cfpp_proto('Total Lysate') * 800
 cost_xdna = cv.convert_units_grams(cfpp_proto('Total xDNA'), 'ug', 'mg') * 100
 cost_t4_ligase = cfpp_proto('Total T4 Ligase') / 243
 cost_t4_buffer = cfpp_proto('Total T4 Ligase Buffer') * 10
 cost_apaI = cfpp_proto('Total ApaI Volume') / 50
 cost_plasmid = cv.convert_units_grams(cfpp_proto('Total Gene Plasmid'), 'ng', 'ug') / 7500 * 300
-print('cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid')
-print(cost_lysate, cost_xdna, cost_t4_ligase, cost_t4_buffer, cost_apaI, cost_plasmid)
+# cfpp # print('cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid')
+# cfpp # print(cost_lysate, cost_xdna, cost_t4_ligase, cost_t4_buffer, cost_apaI, cost_plasmid)
 cfpp_per_cycle_cost = cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid
 
 '''
@@ -99,38 +141,129 @@ final_costs_dict.append({
     "protein_per_cycle_mg": cfpp_proto('Target Protein Per Cycle')
 })
 
+#  Cell Free Prototype (Switching Proteins) ------------------------
+#  same as cell-free prototype (original)
+final_costs_dict.append({
+    "name": "CFPP Prototype (Switching Proteins)",
+    "num_cycles": cfpp_proto('Total Cycles'),
+    "initial_cost": cfpp_initial_cost,
+    "cycle_cost_$": cfpp_per_cycle_cost,
+    "cycle_time_hours": cfpp_time,
+    "protein_per_cycle_mg": cfpp_proto('Target Protein Per Cycle')
+})
+
+
 #  Cell Free Lab (recycle mpads) -----------------------------------
 
 #  Cell Free Industry (recycle mpads) ------------------------------
 
 #  Cell Free Prototype (recycle mpads) -----------------------------
 
-#  Cell Free Prototype (Switching Proteins) ------------------------
-
 #  Cell Free Prototype (recycle mpads) (Switching Proteins) --------
+
 
 ## =================================================================
 ## CELL BASED ======================================================
 
 #  Cell Based Lab --------------------------------------------------
-'''
-"$  =  60000
-= 10000 +  30000 + 20000
-= stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge "
-'''# TODO 
-
-
-cbpp_initial_cost = 0
+cbpp_lab_df = pd.read_csv("data/CBPP_lab_20kg_100cycles.csv")
+def cbpp_lab(name):
+    return cbpp_lab_df.loc[cbpp_lab_df['name'] == name, 'value'].iloc[0]
 
 '''
-"$/per cycle = 1277.91854336
-= 12  + 0.259*40.83 + 0.015*7.0128 + 0.321*7.266352 + 12*103 + 0.054*120 + 0.08862 * 117.647059 
-LB 12L +  KH₂PO₄ 40.83 g 
-NaCl 7.0128g + MgSO4 7.22166g + CaCl2  0.266352g +  12g NH4Cl
-Glucose 120g + 117.647059 mg of IPTG "
+bioreactor 2000L for $200000
+high pressure homogenizer for $20000 for 100 mL/min = 6L/hour; needs to be done in 4 hours 
+one-time costs = stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge "
 '''
+cbpp_initial_cost = 10000 + cbpp_lab('Total Cell Culture Volume')/2000 * 200000 + cv.convert_units_liters(cbpp_lab('Total Cell Culture Volume'), 'ml', 'L')/50*30000    
+print("stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge")
+print(10000 , cbpp_lab('Total Cell Culture Volume')/2000 * 200000 , cv.convert_units_liters(cbpp_lab('Total Cell Culture Volume'), 'ml', 'L')/50*30000)
+
+'''
+$/per cycle = 
+LB + KH2PO4 + NaCl + MgSO4 + CaCl2 + NH4Cl + Glucose + IPTG
+
+'''
+
+# cbpp_per_cycle_cost = LB + KH2PO4 + NaCl + MgSO4 + CaCl2 + NH4Cl + Glucose + IPTG
+cbpp_per_cycle_cost = (cbpp_lab('Total LB') 
+    + cv.convert_units_grams(cbpp_lab('Total KH2PO4'), 'g', 'kg') * 259 
+    + cv.convert_units_grams(cbpp_lab('Total NaCl'), 'g', 'kg') * 15 
+    + cv.convert_units_grams(cbpp_lab('Total MgSO4'), 'g', 'kg') * 321 
+    + cbpp_lab('Total CaCl2')/500 * 523 
+    + cbpp_lab('Total NH4Cl') * 103 
+    + cv.convert_units_grams(cbpp_lab('Total Glucose'), 'g', 'kg') * 54 
+    + cv.convert_units_grams(cbpp_lab('Total IPTG'), 'mg', 'g') * 177.24)
+
+print(cbpp_lab('Total LB')  
+, cv.convert_units_grams(cbpp_lab('Total KH2PO4'), 'g', 'kg') * 259 
+, cv.convert_units_grams(cbpp_lab('Total NaCl'), 'g', 'kg') * 15 
+, cv.convert_units_grams(cbpp_lab('Total MgSO4'), 'g', 'kg') * 321 
+, cbpp_lab('Total CaCl2')/500 * 523 
+, cbpp_lab('Total NH4Cl') * 103 
+, cv.convert_units_grams(cbpp_lab('Total Glucose'), 'g', 'kg') * 54 
+, cv.convert_units_grams(cbpp_lab('Total IPTG'), 'mg', 'g') * 177.24)
+cbpp_time = 46 # TODO
+
+final_costs_dict.append({
+    "name": "CFPP Lab",
+    "num_cycles": cbpp_lab('Total Cycles'),
+    "initial_cost": cbpp_initial_cost,
+    "cycle_cost_$": cbpp_per_cycle_cost,
+    "cycle_time_hours": cbpp_time,
+    "protein_per_cycle_mg": cbpp_lab('Target Protein Per Cycle')
+})
+
 
 #  Cell Based Industry ---------------------------------------------
+
+cbpp_ind_df = pd.read_csv("data/CBPP_industry_200kg_100cycles.csv")
+def cbpp_ind(name):
+    return cbpp_ind_df.loc[cbpp_ind_df['name'] == name, 'value'].iloc[0]
+
+'''
+bioreactor 2000L for $200000
+high pressure homogenizer for $20000 for 100 mL/min = 6L/hour; needs to be done in 4 hours 
+one-time costs = stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge "
+'''
+cbpp_initial_cost = 10000 + cbpp_ind('Total Cell Culture Volume')/2000 * 200000 + cv.convert_units_liters(cbpp_ind('Total Cell Culture Volume'), 'ml', 'L')/500*200000    
+print("stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge")
+print(10000 , cbpp_ind('Total Cell Culture Volume')/2000 * 200000 , cv.convert_units_liters(cbpp_ind('Total Cell Culture Volume'), 'ml', 'L')/500*200000)
+
+'''
+$/per cycle = 
+LB + KH2PO4 + NaCl + MgSO4 + CaCl2 + NH4Cl + Glucose + IPTG
+
+'''
+
+# cbpp_per_cycle_cost = LB + KH2PO4 + NaCl + MgSO4 + CaCl2 + NH4Cl + Glucose + IPTG
+cbpp_per_cycle_cost = (cbpp_ind('Total LB') 
+    + cv.convert_units_grams(cbpp_ind('Total KH2PO4'), 'g', 'kg') * 259 
+    + cv.convert_units_grams(cbpp_ind('Total NaCl'), 'g', 'kg') * 15 
+    + cv.convert_units_grams(cbpp_ind('Total MgSO4'), 'g', 'kg') * 321 
+    + cbpp_ind('Total CaCl2')/500 * 523 
+    + cbpp_ind('Total NH4Cl') * 103 
+    + cv.convert_units_grams(cbpp_ind('Total Glucose'), 'g', 'kg') * 54 
+    + cv.convert_units_grams(cbpp_ind('Total IPTG'), 'mg', 'g') * 177.24)
+
+print(cbpp_ind('Total LB')  
+, cv.convert_units_grams(cbpp_ind('Total KH2PO4'), 'g', 'kg') * 259 
+, cv.convert_units_grams(cbpp_ind('Total NaCl'), 'g', 'kg') * 15 
+, cv.convert_units_grams(cbpp_ind('Total MgSO4'), 'g', 'kg') * 321 
+, cbpp_ind('Total CaCl2')/500 * 523 
+, cbpp_ind('Total NH4Cl') * 103 
+, cv.convert_units_grams(cbpp_ind('Total Glucose'), 'g', 'kg') * 54 
+, cv.convert_units_grams(cbpp_ind('Total IPTG'), 'mg', 'g') * 177.24)
+cbpp_time = 46 # TODO
+
+final_costs_dict.append({
+    "name": "CFPP Industry",
+    "num_cycles": cbpp_ind('Total Cycles'),
+    "initial_cost": cbpp_initial_cost,
+    "cycle_cost_$": cbpp_per_cycle_cost,
+    "cycle_time_hours": cbpp_time,
+    "protein_per_cycle_mg": cbpp_ind('Target Protein Per Cycle')
+})
 
 #  Cell Based Prototype --------------------------------------------
 
