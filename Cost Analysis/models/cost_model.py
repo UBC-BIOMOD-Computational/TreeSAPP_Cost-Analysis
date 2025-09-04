@@ -154,8 +154,93 @@ final_costs_dict.append({
 
 
 #  Cell Free Lab (recycle mpads) -----------------------------------
+cfpp_lab_df = pd.read_csv("data/CFPP_lab_20kg_100cycles.csv")
+def cfpp_lab(name):
+    return cfpp_lab_df.loc[cfpp_lab_df['name'] == name, 'value'].iloc[0]
+
+'''
+cfpp_initial_cost = mold equipment + photoresist + pdms for mold creation
+'''
+cfpp_initial_cost = 77000 + 750 + cfpp_lab('Total PDMS Volume') * 340
+
+'''
+"$/per cycle = 
+=  lysate at 800CAD/1L
++ dna sequences for xdna arms at $100/mg
++ T4 Ligase for 243units/$1
++ T4 Ligase buffer for $10/mL
++ ApaI for 50 units/$1
++ plasmid purified (7500ug for $300)"
+'''
+cost_lysate = cfpp_lab('Total Lysate') * 800
+cost_xdna = cv.convert_units_grams(cfpp_lab('Total xDNA'), 'ug', 'mg') * 100 / 2 # recycling mpads cuts xdna cost in half
+cost_t4_ligase = cfpp_lab('Total T4 Ligase') / 243 / 2 # recycling mpads cuts T4 ligase cost in half
+cost_t4_buffer = cfpp_lab('Total T4 Ligase Buffer') * 10 / 2 # recycling mpads cuts T4 buffer cost in half
+cost_apaI = cfpp_lab('Total ApaI Volume') / 50 / 2 # recycling mpads cuts ApaI cost in half
+cost_plasmid = cv.convert_units_grams(cfpp_lab('Total Gene Plasmid'), 'ng', 'ug') / 7500 * 300 /2 # recycling mpads cuts plasmid cost in half
+# cfpp # print('cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid')
+# cfpp # print(cost_lysate, cost_xdna, cost_t4_ligase, cost_t4_buffer, cost_apaI, cost_plasmid)
+cfpp_per_cycle_cost = cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid
+
+'''
+"t = 40h (pipelined into upstream + downstream) 
+*not including initial mold making"
+'''
+cfpp_time = 40
+
+final_costs_dict.append({
+    "name": "CFPP Lab (recycle mpads)",
+    "num_cycles": cfpp_lab('Total Cycles'),
+    "initial_cost": cfpp_initial_cost,
+    "cycle_cost_$": cfpp_per_cycle_cost,
+    "cycle_time_hours": cfpp_time,
+    "protein_per_cycle_mg": cfpp_lab('Target Protein Per Cycle')
+})
 
 #  Cell Free Industry (recycle mpads) ------------------------------
+
+cfpp_ind_df = pd.read_csv("data/CFPP_industry_200kg_100cycles.csv")
+def cfpp_ind(name):
+    return cfpp_ind_df.loc[cfpp_ind_df['name'] == name, 'value'].iloc[0]
+
+'''
+cfpp_initial_cost = mold equipment + photoresist + pdms for mold creation
+'''
+cfpp_initial_cost = 77000 + 750 + cfpp_ind('Total PDMS Volume') * 340
+
+'''
+"$/per cycle = 
+=  lysate at 600CAD/1L
++ dna sequences for xdna arms at $100/mg
++ T4 Ligase for 243units/$1
++ T4 Ligase buffer for $10/mL
++ ApaI for 50 units/$1
++ plasmid purified (7500ug for $300)"
+'''
+cost_lysate = cfpp_ind('Total Lysate') * 600
+cost_xdna = cv.convert_units_grams(cfpp_ind('Total xDNA'), 'ug', 'mg') * 100 / 2 # recycling mpads cuts xdna cost in half
+cost_t4_ligase = cfpp_ind('Total T4 Ligase') / 243 / 2 # recycling mpads cuts T4 ligase cost in half
+cost_t4_buffer = cfpp_ind('Total T4 Ligase Buffer') * 10 / 2 # recycling mpads cuts T4 buffer cost in half
+cost_apaI = cfpp_ind('Total ApaI Volume') / 50 / 2 # recycling mpads cuts ApaI cost in half
+cost_plasmid = cv.convert_units_grams(cfpp_ind('Total Gene Plasmid'), 'ng', 'ug') / 7500 * 300 / 2 # recycling mpads cuts plasmid cost in half
+# cfpp # print('cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid')
+# cfpp # print(cost_lysate, cost_xdna, cost_t4_ligase, cost_t4_buffer, cost_apaI, cost_plasmid)
+cfpp_per_cycle_cost = cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid
+
+'''
+"t = 40h (pipelined into upstream + downstream) 
+*not including initial mold making"
+'''
+cfpp_time = 40
+
+final_costs_dict.append({
+    "name": "CFPP Industry (recycle mpads)",
+    "num_cycles": cfpp_ind('Total Cycles'),
+    "initial_cost": cfpp_initial_cost,
+    "cycle_cost_$": cfpp_per_cycle_cost,
+    "cycle_time_hours": cfpp_time,
+    "protein_per_cycle_mg": cfpp_ind('Target Protein Per Cycle')
+})
 
 #  Cell Free Prototype (recycle mpads) -----------------------------
 
