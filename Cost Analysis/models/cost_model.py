@@ -226,16 +226,15 @@ bioreactor 2000L for $200000
 high pressure homogenizer for $20000 for 100 mL/min = 6L/hour; needs to be done in 4 hours 
 one-time costs = stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge "
 '''
-cbpp_initial_cost = 10000 + cbpp_ind('Total Cell Culture Volume')/2000 * 200000 + cv.convert_units_liters(cbpp_ind('Total Cell Culture Volume'), 'ml', 'L')/500*200000    
+cbpp_initial_cost = 75000 + cbpp_ind('Total Cell Culture Volume')/2000 * 200000 + cv.convert_units_liters(cbpp_ind('Total Cell Culture Volume'), 'ml', 'L')/500*200000    
 print("stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge")
-print(10000 , cbpp_ind('Total Cell Culture Volume')/2000 * 200000 , cv.convert_units_liters(cbpp_ind('Total Cell Culture Volume'), 'ml', 'L')/500*200000)
+print(75000 , cbpp_ind('Total Cell Culture Volume')/2000 * 200000 , cv.convert_units_liters(cbpp_ind('Total Cell Culture Volume'), 'ml', 'L')/500*200000)
 
 '''
 $/per cycle = 
 LB + KH2PO4 + NaCl + MgSO4 + CaCl2 + NH4Cl + Glucose + IPTG
 
 '''
-
 # cbpp_per_cycle_cost = LB + KH2PO4 + NaCl + MgSO4 + CaCl2 + NH4Cl + Glucose + IPTG
 cbpp_per_cycle_cost = (cbpp_ind('Total LB') 
     + cv.convert_units_grams(cbpp_ind('Total KH2PO4'), 'g', 'kg') * 259 
@@ -266,8 +265,100 @@ final_costs_dict.append({
 })
 
 #  Cell Based Prototype --------------------------------------------
+cbpp_proto_df = pd.read_csv("data/CBPP_prototype_10g_10cycles.csv")
+def cbpp_proto(name):
+    return cbpp_proto_df.loc[cbpp_proto_df['name'] == name, 'value'].iloc[0]
+
+'''
+2000 cell line development
+1L bioreactor for $5000
+high pressure homogenizer for $20000 for 100 mL/min = 6L/hour; needs to be done in 4 hours 
+one-time costs = stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge "
+'''
+cbpp_initial_cost = 2000 + 5000 +  cv.convert_units_liters(cbpp_proto('Total Cell Culture Volume'), 'ml', 'L')*10000
+print("stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge")
+print(2000 , 5000 , cv.convert_units_liters(cbpp_proto('Total Cell Culture Volume'), 'ml', 'L')*10000)
+
+'''
+$/per cycle = 
+LB + KH2PO4 + NaCl + MgSO4 + CaCl2 + NH4Cl + Glucose + IPTG
+
+'''
+# cbpp_per_cycle_cost = LB + KH2PO4 + NaCl + MgSO4 + CaCl2 + NH4Cl + Glucose + IPTG
+cbpp_per_cycle_cost = (cbpp_proto('Total LB') 
+    + cv.convert_units_grams(cbpp_proto('Total KH2PO4'), 'g', 'kg') * 259 
+    + cv.convert_units_grams(cbpp_proto('Total NaCl'), 'g', 'kg') * 15 
+    + cv.convert_units_grams(cbpp_proto('Total MgSO4'), 'g', 'kg') * 321 
+    + cbpp_proto('Total CaCl2')/500 * 523 
+    + cbpp_proto('Total NH4Cl') * 103 
+    + cv.convert_units_grams(cbpp_proto('Total Glucose'), 'g', 'kg') * 54 
+    + cv.convert_units_grams(cbpp_proto('Total IPTG'), 'mg', 'g') * 177.24)
+
+print(cbpp_proto('Total LB')  
+, cv.convert_units_grams(cbpp_proto('Total KH2PO4'), 'g', 'kg') * 259 
+, cv.convert_units_grams(cbpp_proto('Total NaCl'), 'g', 'kg') * 15 
+, cv.convert_units_grams(cbpp_proto('Total MgSO4'), 'g', 'kg') * 321 
+, cbpp_proto('Total CaCl2')/500 * 523 
+, cbpp_proto('Total NH4Cl') * 103 
+, cv.convert_units_grams(cbpp_proto('Total Glucose'), 'g', 'kg') * 54 
+, cv.convert_units_grams(cbpp_proto('Total IPTG'), 'mg', 'g') * 177.24)
+cbpp_time = 46 
+
+final_costs_dict.append({
+    "name": "CFPP Prototype",
+    "num_cycles": cbpp_proto('Total Cycles'),
+    "initial_cost": cbpp_initial_cost,
+    "cycle_cost_$": cbpp_per_cycle_cost,
+    "cycle_time_hours": cbpp_time,
+    "protein_per_cycle_mg": cbpp_proto('Target Protein Per Cycle')
+})
 
 #  Cell Based Prototype (Switching Proteins) -----------------------
+
+'''
+2000 cell line development
+1L bioreactor for $5000
+high pressure homogenizer for $20000 for 100 mL/min = 6L/hour; needs to be done in 4 hours 
+one-time costs = cellular expression equipment + highPressureHomogenizer/centrifuge "
+'''
+cbpp_initial_cost =  5000 +  cv.convert_units_liters(cbpp_proto('Total Cell Culture Volume'), 'ml', 'L')*10000
+print(" cellular expression equipment + highPressureHomogenizer/centrifuge")
+print( 5000 , cv.convert_units_liters(cbpp_proto('Total Cell Culture Volume'), 'ml', 'L')*10000)
+
+'''
+$/per cycle =  stable cell line development + 
+LB + KH2PO4 + NaCl + MgSO4 + CaCl2 + NH4Cl + Glucose + IPTG
+
+'''
+# cbpp_per_cycle_cost = LB + KH2PO4 + NaCl + MgSO4 + CaCl2 + NH4Cl + Glucose + IPTG
+cbpp_per_cycle_cost = (2000 
+    + cbpp_proto('Total LB') 
+    + cv.convert_units_grams(cbpp_proto('Total KH2PO4'), 'g', 'kg') * 259 
+    + cv.convert_units_grams(cbpp_proto('Total NaCl'), 'g', 'kg') * 15 
+    + cv.convert_units_grams(cbpp_proto('Total MgSO4'), 'g', 'kg') * 321 
+    + cbpp_proto('Total CaCl2')/500 * 523 
+    + cbpp_proto('Total NH4Cl') * 103 
+    + cv.convert_units_grams(cbpp_proto('Total Glucose'), 'g', 'kg') * 54 
+    + cv.convert_units_grams(cbpp_proto('Total IPTG'), 'mg', 'g') * 177.24)
+
+print(cbpp_proto('Total LB')  
+, cv.convert_units_grams(cbpp_proto('Total KH2PO4'), 'g', 'kg') * 259 
+, cv.convert_units_grams(cbpp_proto('Total NaCl'), 'g', 'kg') * 15 
+, cv.convert_units_grams(cbpp_proto('Total MgSO4'), 'g', 'kg') * 321 
+, cbpp_proto('Total CaCl2')/500 * 523 
+, cbpp_proto('Total NH4Cl') * 103 
+, cv.convert_units_grams(cbpp_proto('Total Glucose'), 'g', 'kg') * 54 
+, cv.convert_units_grams(cbpp_proto('Total IPTG'), 'mg', 'g') * 177.24)
+cbpp_time = 46 
+
+final_costs_dict.append({
+    "name": "CFPP Prototype (Switching Proteins)",
+    "num_cycles": cbpp_proto('Total Cycles'),
+    "initial_cost": cbpp_initial_cost,
+    "cycle_cost_$": cbpp_per_cycle_cost,
+    "cycle_time_hours": cbpp_time,
+    "protein_per_cycle_mg": cbpp_proto('Target Protein Per Cycle')
+})
 
 
 ## =================================================================
