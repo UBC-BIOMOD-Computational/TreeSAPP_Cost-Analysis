@@ -298,11 +298,12 @@ def cbpp_lab(name):
     return cbpp_lab_df.loc[cbpp_lab_df['name'] == name, 'value'].iloc[0]
 
 '''
+$46000 for GMP certification
 bioreactor 2000L for $200000
 high pressure homogenizer for $20000 for 100 mL/min = 6L/hour; needs to be done in 4 hours 
 one-time costs = stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge "
 '''
-cbpp_initial_cost = 10000 + cbpp_lab('Total Cell Culture Volume')/2000 * 200000 + cv.convert_units_liters(cbpp_lab('Total Cell Culture Volume'), 'ml', 'L')/50*30000    
+cbpp_initial_cost = 46000 + 10000 + cbpp_lab('Total Cell Culture Volume')/2000 * 200000 + cv.convert_units_liters(cbpp_lab('Total Cell Culture Volume'), 'ml', 'L')/50*30000    
 print("stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge")
 print(10000 , cbpp_lab('Total Cell Culture Volume')/2000 * 200000 , cv.convert_units_liters(cbpp_lab('Total Cell Culture Volume'), 'ml', 'L')/50*30000)
 
@@ -349,11 +350,12 @@ def cbpp_ind(name):
     return cbpp_ind_df.loc[cbpp_ind_df['name'] == name, 'value'].iloc[0]
 
 '''
+$175000 for cell line certification
 bioreactor 2000L for $200000
 high pressure homogenizer for $20000 for 100 mL/min = 6L/hour; needs to be done in 4 hours 
 one-time costs = stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge "
 '''
-cbpp_initial_cost = 75000 + cbpp_ind('Total Cell Culture Volume')/2000 * 200000 + cv.convert_units_liters(cbpp_ind('Total Cell Culture Volume'), 'ml', 'L')/500*200000    
+cbpp_initial_cost = 175000 + 75000 + cbpp_ind('Total Cell Culture Volume')/2000 * 200000 + cv.convert_units_liters(cbpp_ind('Total Cell Culture Volume'), 'ml', 'L')/500*200000    
 print("stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge")
 print(75000 , cbpp_ind('Total Cell Culture Volume')/2000 * 200000 , cv.convert_units_liters(cbpp_ind('Total Cell Culture Volume'), 'ml', 'L')/500*200000)
 
@@ -443,12 +445,12 @@ final_costs_dict.append({
 #  Cell Based Prototype (Switching Proteins) -----------------------
 
 '''
-2000 cell line development
+done per cycle - cell line development
 1L bioreactor for $5000
 high pressure homogenizer for $20000 for 100 mL/min = 6L/hour; needs to be done in 4 hours 
 one-time costs = cellular expression equipment + highPressureHomogenizer/centrifuge "
 '''
-cbpp_initial_cost =  5000 +  cv.convert_units_liters(cbpp_proto('Total Cell Culture Volume'), 'ml', 'L')*10000
+cbpp_initial_cost = 5000 +  cv.convert_units_liters(cbpp_proto('Total Cell Culture Volume'), 'ml', 'L')*10000
 print(" cellular expression equipment + highPressureHomogenizer/centrifuge")
 print( 5000 , cv.convert_units_liters(cbpp_proto('Total Cell Culture Volume'), 'ml', 'L')*10000)
 
