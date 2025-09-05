@@ -301,9 +301,9 @@ def cbpp_lab(name):
 $46000 for GMP certification
 bioreactor 2000L for $200000
 high pressure homogenizer for $20000 for 100 mL/min = 6L/hour; needs to be done in 4 hours 
-one-time costs = stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge "
+one-time costs = gmp certification + stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge "
 '''
-cbpp_initial_cost = 46000 + 10000 + cbpp_lab('Total Cell Culture Volume')/2000 * 200000 + cv.convert_units_liters(cbpp_lab('Total Cell Culture Volume'), 'ml', 'L')/50*30000    
+cbpp_initial_cost = 46000 + 30000 + cbpp_lab('Total Cell Culture Volume')/2000 * 200000 + cv.convert_units_liters(cbpp_lab('Total Cell Culture Volume'), 'ml', 'L')/50*30000    
 print("stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge")
 print(10000 , cbpp_lab('Total Cell Culture Volume')/2000 * 200000 , cv.convert_units_liters(cbpp_lab('Total Cell Culture Volume'), 'ml', 'L')/50*30000)
 
@@ -334,7 +334,7 @@ print(cbpp_lab('Total LB')
 cbpp_time = 46 # TODO
 
 final_costs_dict.append({
-    "name": "CFPP Lab",
+    "name": "CBPP Lab",
     "num_cycles": cbpp_lab('Total Cycles'),
     "initial_cost": cbpp_initial_cost,
     "cycle_cost_$": cbpp_per_cycle_cost,
@@ -353,7 +353,7 @@ def cbpp_ind(name):
 $175000 for cell line certification
 bioreactor 2000L for $200000
 high pressure homogenizer for $20000 for 100 mL/min = 6L/hour; needs to be done in 4 hours 
-one-time costs = stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge "
+one-time costs = gmp certification + stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge "
 '''
 cbpp_initial_cost = 175000 + 75000 + cbpp_ind('Total Cell Culture Volume')/2000 * 200000 + cv.convert_units_liters(cbpp_ind('Total Cell Culture Volume'), 'ml', 'L')/500*200000    
 print("stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge")
@@ -385,7 +385,7 @@ print(cbpp_ind('Total LB')
 cbpp_time = 46 # TODO
 
 final_costs_dict.append({
-    "name": "CFPP Industry",
+    "name": "CBPP Industry",
     "num_cycles": cbpp_ind('Total Cycles'),
     "initial_cost": cbpp_initial_cost,
     "cycle_cost_$": cbpp_per_cycle_cost,
@@ -401,12 +401,12 @@ def cbpp_proto(name):
 '''
 2000 cell line development
 1L bioreactor for $5000
-high pressure homogenizer for $20000 for 100 mL/min = 6L/hour; needs to be done in 4 hours 
+lysis machine $30000 
 one-time costs = stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge "
 '''
-cbpp_initial_cost = 2000 + 5000 +  cv.convert_units_liters(cbpp_proto('Total Cell Culture Volume'), 'ml', 'L')*10000
-print("stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge")
-print(2000 , 5000 , cv.convert_units_liters(cbpp_proto('Total Cell Culture Volume'), 'ml', 'L')*10000)
+cbpp_initial_cost = 10000 + 5000 + 30000
+print("stable cell line development + cellular expression equipment + lysis machine")
+print(2000 , 5000 , 30000)
 
 '''
 $/per cycle = 
@@ -434,7 +434,7 @@ print(cbpp_proto('Total LB')
 cbpp_time = 46 
 
 final_costs_dict.append({
-    "name": "CFPP Prototype",
+    "name": "CBPP Prototype",
     "num_cycles": cbpp_proto('Total Cycles'),
     "initial_cost": cbpp_initial_cost,
     "cycle_cost_$": cbpp_per_cycle_cost,
@@ -450,17 +450,17 @@ done per cycle - cell line development
 high pressure homogenizer for $20000 for 100 mL/min = 6L/hour; needs to be done in 4 hours 
 one-time costs = cellular expression equipment + highPressureHomogenizer/centrifuge "
 '''
-cbpp_initial_cost = 5000 +  cv.convert_units_liters(cbpp_proto('Total Cell Culture Volume'), 'ml', 'L')*10000
-print(" cellular expression equipment + highPressureHomogenizer/centrifuge")
-print( 5000 , cv.convert_units_liters(cbpp_proto('Total Cell Culture Volume'), 'ml', 'L')*10000)
+cbpp_initial_cost = 5000 + 30000
+print(" cellular expression equipment + lysis machine")
+print( 5000 , 30000)
 
 '''
 $/per cycle =  stable cell line development + 
 LB + KH2PO4 + NaCl + MgSO4 + CaCl2 + NH4Cl + Glucose + IPTG
 
 '''
-# cbpp_per_cycle_cost = LB + KH2PO4 + NaCl + MgSO4 + CaCl2 + NH4Cl + Glucose + IPTG
-cbpp_per_cycle_cost = (2000 
+# cbpp_per_cycle_cost = cell line development/transformation + LB + KH2PO4 + NaCl + MgSO4 + CaCl2 + NH4Cl + Glucose + IPTG
+cbpp_per_cycle_cost = (10000 
     + cbpp_proto('Total LB') 
     + cv.convert_units_grams(cbpp_proto('Total KH2PO4'), 'g', 'kg') * 259 
     + cv.convert_units_grams(cbpp_proto('Total NaCl'), 'g', 'kg') * 15 
@@ -481,7 +481,7 @@ print(cbpp_proto('Total LB')
 cbpp_time = 46 + 24 # additional 24 for transformation each time
 
 final_costs_dict.append({
-    "name": "CFPP Prototype (Switching Proteins)",
+    "name": "CBPP Prototype (Switching Proteins)",
     "num_cycles": cbpp_proto('Total Cycles'),
     "initial_cost": cbpp_initial_cost,
     "cycle_cost_$": cbpp_per_cycle_cost,
