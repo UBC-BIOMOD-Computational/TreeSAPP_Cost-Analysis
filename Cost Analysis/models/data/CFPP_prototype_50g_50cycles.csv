@@ -1,0 +1,15 @@
+section,section_time,name,value,unit
+Starting Requirements,0,Target Protein,0.05,kg
+Starting Requirements,0,Total Cycles,50.0,cycles
+Starting Requirements,0,Target Protein Per Cycle,1.0,g
+Expression,36 hours,Total Expression Solution,333.3333333333333,mL
+Expression,36 hours,Total Pgel Pad Solution,53.33333333333333,mL
+Expression,36 hours,Total Pgel Pad Count,2666666.666666667,micropads
+Expression,36 hours,Total Gene Plasmid,2666666.666666667,ng
+Expression,36 hours,Total Lysate,233.33333333333331,mL
+X-DNA Formation,16 hours,Total xDNA,73955.55555555556,ug
+X-DNA Formation,16 hours,Total T4 Ligase,5333.3328,units
+X-DNA Formation,16 hours,Total T4 Ligase Buffer,5.333333333333333,mL
+Plasmid Linearization,16 hours,Total ApaI Volume,53333.333333333336,units
+Plasmid Expression,24 hours,Total E.coli Volume,0.5333333333333334,mL
+Mold Formation,24 hours,Total PDMS Volume,2.666666666666667,L

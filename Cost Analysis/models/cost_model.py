@@ -98,7 +98,7 @@ final_costs_dict.append({
 
 
 #  Cell Free Prototype ---------------------------------------------
-cfpp_proto_df = pd.read_csv("data/CFPP_prototype_10g_10cycles.csv")
+cfpp_proto_df = pd.read_csv("data/CFPP_prototype_50g_50cycles.csv")
 def cfpp_proto(name):
     return cfpp_proto_df.loc[cfpp_proto_df['name'] == name, 'value'].iloc[0]
 
@@ -245,7 +245,7 @@ final_costs_dict.append({
 #  Cell Free Prototype (recycle mpads) -----------------------------
 
 
-cfpp_proto_df = pd.read_csv("data/CFPP_prototype_10g_10cycles.csv")
+cfpp_proto_df = pd.read_csv("data/CFPP_prototype_50g_50cycles.csv")
 def cfpp_proto(name):
     return cfpp_proto_df.loc[cfpp_proto_df['name'] == name, 'value'].iloc[0]
 
@@ -394,7 +394,7 @@ final_costs_dict.append({
 })
 
 #  Cell Based Prototype --------------------------------------------
-cbpp_proto_df = pd.read_csv("data/CBPP_prototype_10g_10cycles.csv")
+cbpp_proto_df = pd.read_csv("data/CBPP_prototype_50g_50cycles.csv")
 def cbpp_proto(name):
     return cbpp_proto_df.loc[cbpp_proto_df['name'] == name, 'value'].iloc[0]
 
