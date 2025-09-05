@@ -476,7 +476,7 @@ print(cbpp_proto('Total LB')
 , cbpp_proto('Total NH4Cl') * 103 
 , cv.convert_units_grams(cbpp_proto('Total Glucose'), 'g', 'kg') * 54 
 , cv.convert_units_grams(cbpp_proto('Total IPTG'), 'mg', 'g') * 177.24)
-cbpp_time = 46 
+cbpp_time = 46 + 24 # additional 24 for transformation each time
 
 final_costs_dict.append({
     "name": "CFPP Prototype (Switching Proteins)",
