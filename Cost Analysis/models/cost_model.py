@@ -8,7 +8,7 @@ final_costs_dict = []
 ## CELL FREE =======================================================
 
 #  Cell Free Lab ---------------------------------------------------
-cfpp_lab_df = pd.read_csv("data/CFPP_lab_20kg_100cycles.csv")
+cfpp_lab_df = pd.read_csv("../data/CFPP_lab_20kg_100cycles.csv")
 def cfpp_lab(name):
     return cfpp_lab_df.loc[cfpp_lab_df['name'] == name, 'value'].iloc[0]
 
@@ -53,7 +53,7 @@ final_costs_dict.append({
 
 #  Cell Free Industry ----------------------------------------------
 
-cfpp_ind_df = pd.read_csv("data/CFPP_industry_200kg_100cycles.csv")
+cfpp_ind_df = pd.read_csv("../data/CFPP_industry_200kg_100cycles.csv")
 def cfpp_ind(name):
     return cfpp_ind_df.loc[cfpp_ind_df['name'] == name, 'value'].iloc[0]
 
@@ -98,7 +98,7 @@ final_costs_dict.append({
 
 
 #  Cell Free Prototype ---------------------------------------------
-cfpp_proto_df = pd.read_csv("data/CFPP_prototype_50g_50cycles.csv")
+cfpp_proto_df = pd.read_csv("../data/CFPP_prototype_50g_50cycles.csv")
 def cfpp_proto(name):
     return cfpp_proto_df.loc[cfpp_proto_df['name'] == name, 'value'].iloc[0]
 
@@ -154,7 +154,7 @@ final_costs_dict.append({
 
 
 #  Cell Free Lab (recycle mpads) -----------------------------------
-cfpp_lab_df = pd.read_csv("data/CFPP_lab_20kg_100cycles.csv")
+cfpp_lab_df = pd.read_csv("../data/CFPP_lab_20kg_100cycles.csv")
 def cfpp_lab(name):
     return cfpp_lab_df.loc[cfpp_lab_df['name'] == name, 'value'].iloc[0]
 
@@ -199,7 +199,7 @@ final_costs_dict.append({
 
 #  Cell Free Industry (recycle mpads) ------------------------------
 
-cfpp_ind_df = pd.read_csv("data/CFPP_industry_200kg_100cycles.csv")
+cfpp_ind_df = pd.read_csv("../data/CFPP_industry_200kg_100cycles.csv")
 def cfpp_ind(name):
     return cfpp_ind_df.loc[cfpp_ind_df['name'] == name, 'value'].iloc[0]
 
@@ -245,7 +245,7 @@ final_costs_dict.append({
 #  Cell Free Prototype (recycle mpads) -----------------------------
 
 
-cfpp_proto_df = pd.read_csv("data/CFPP_prototype_50g_50cycles.csv")
+cfpp_proto_df = pd.read_csv("../data/CFPP_prototype_50g_50cycles.csv")
 def cfpp_proto(name):
     return cfpp_proto_df.loc[cfpp_proto_df['name'] == name, 'value'].iloc[0]
 
@@ -293,7 +293,7 @@ final_costs_dict.append({
 ## CELL BASED ======================================================
 
 #  Cell Based Lab --------------------------------------------------
-cbpp_lab_df = pd.read_csv("data/CBPP_lab_20kg_100cycles.csv")
+cbpp_lab_df = pd.read_csv("../data/CBPP_lab_20kg_100cycles.csv")
 def cbpp_lab(name):
     return cbpp_lab_df.loc[cbpp_lab_df['name'] == name, 'value'].iloc[0]
 
@@ -345,7 +345,7 @@ final_costs_dict.append({
 
 #  Cell Based Industry ---------------------------------------------
 
-cbpp_ind_df = pd.read_csv("data/CBPP_industry_200kg_100cycles.csv")
+cbpp_ind_df = pd.read_csv("../data/CBPP_industry_200kg_100cycles.csv")
 def cbpp_ind(name):
     return cbpp_ind_df.loc[cbpp_ind_df['name'] == name, 'value'].iloc[0]
 
@@ -394,7 +394,7 @@ final_costs_dict.append({
 })
 
 #  Cell Based Prototype --------------------------------------------
-cbpp_proto_df = pd.read_csv("data/CBPP_prototype_50g_50cycles.csv")
+cbpp_proto_df = pd.read_csv("../data/CBPP_prototype_50g_50cycles.csv")
 def cbpp_proto(name):
     return cbpp_proto_df.loc[cbpp_proto_df['name'] == name, 'value'].iloc[0]
 
@@ -494,4 +494,4 @@ final_costs_dict.append({
 ## EXPORT ==========================================================
 
 final_costs_df = pd.DataFrame(final_costs_dict)
-final_costs_df.to_csv("data/final_costs.csv", index=False)
+final_costs_df.to_csv("../data/final_costs.csv", index=False)

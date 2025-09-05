@@ -118,5 +118,5 @@ df6['section_time'] = '24 hours'
 df = pd.concat([df, df6])
 
 ## Export =====================
-df.to_csv('data/CFPP.csv', index=False)
+df.to_csv('../data/CFPP.csv', index=False)
 
