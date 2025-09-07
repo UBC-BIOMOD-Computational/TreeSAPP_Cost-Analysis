@@ -2,7 +2,8 @@ import conversion as cv
 import pandas as pd
 import numpy as np
 
-final_costs_dict = []
+final_costs_dict = [] # columns = ['name', 'num_cycles', 'initial_cost', 'cycle_cost_$', 'cycle_time_hours', 'protein_per_cycle_mg']
+cost_breakdown_dict = [] # columns = ['name', 'step', 'specific item', 'cost_$', 'quantity', 'unit']
 
 ## =================================================================
 ## CELL FREE =======================================================
@@ -16,6 +17,30 @@ def cfpp_lab(name):
 cfpp_initial_cost = mold equipment + photoresist + pdms for mold creation
 '''
 cfpp_initial_cost = 77000 + 750 + cfpp_lab('Total PDMS Volume') * 340
+cost_breakdown_dict.append({
+    "name": "CFPP Lab",
+    "step": "Initial Costs",
+    "specific item": "Mold Equipment",
+    "cost_$": 77000,
+    "quantity": 1,
+    "unit": "set"
+})
+cost_breakdown_dict.append({
+    "name": "CFPP Lab",
+    "step": "Initial Costs",
+    "specific item": "Photoresist",
+    "cost_$": 750,
+    "quantity": 1,
+    "unit": "set"
+})
+cost_breakdown_dict.append({
+    "name": "CFPP Lab",
+    "step": "Initial Costs",
+    "specific item": "PDMS",
+    "cost_$": cfpp_lab('Total PDMS Volume') * 340,
+    "quantity": cfpp_lab('Total PDMS Volume'),
+    "unit": "L"
+})
 
 '''
 "$/per cycle = 
@@ -35,6 +60,56 @@ cost_plasmid = cv.convert_units_grams(cfpp_lab('Total Gene Plasmid'), 'ng', 'ug'
 # cfpp # print('cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid')
 # cfpp # print(cost_lysate, cost_xdna, cost_t4_ligase, cost_t4_buffer, cost_apaI, cost_plasmid)
 cfpp_per_cycle_cost = cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid
+
+cost_breakdown_dict.append({
+    "name": "CFPP Lab",
+    "step": "Per Cycle Costs",
+    "specific item": "Lysate",
+    "cost_$": cost_lysate,
+    "quantity": cfpp_lab('Total Lysate'),
+    "unit": "mL"
+})
+cost_breakdown_dict.append({
+    "name": "CFPP Lab",
+    "step": "Per Cycle Costs",
+    "specific item": "xDNA",   
+    "cost_$": cost_xdna,
+    "quantity": cv.convert_units_grams(cfpp_lab('Total xDNA'), 'ug', 'mg'),
+    "unit": "mg"
+})
+cost_breakdown_dict.append({
+    "name": "CFPP Lab",
+    "step": "Per Cycle Costs",
+    "specific item": "T4 Ligase",
+    "cost_$": cost_t4_ligase,
+    "quantity": cfpp_lab('Total T4 Ligase'),
+    "unit": "units"
+})
+cost_breakdown_dict.append({
+    "name": "CFPP Lab",
+    "step": "Per Cycle Costs",
+    "specific item": "T4 Ligase Buffer",
+    "cost_$": cost_t4_buffer,
+    "quantity": cfpp_lab('Total T4 Ligase Buffer'),
+    "unit": "mL"
+})
+
+cost_breakdown_dict.append({
+    "name": "CFPP Lab",
+    "step": "Per Cycle Costs",
+    "specific item": "ApaI",
+    "cost_$": cost_apaI,
+    "quantity": cfpp_lab('Total ApaI Volume'),
+    "unit": "units"
+})
+cost_breakdown_dict.append({
+    "name": "CFPP Lab",
+    "step": "Per Cycle Costs",
+    "specific item": "Gene Plasmid",
+    "cost_$": cost_plasmid,
+    "quantity": cfpp_lab('Total Gene Plasmid'),
+    "unit": "ng"
+})
 
 '''
 "t = 40h (pipelined into upstream + downstream) 
@@ -61,6 +136,32 @@ def cfpp_ind(name):
 cfpp_initial_cost = mold equipment + photoresist + pdms for mold creation
 '''
 cfpp_initial_cost = 77000 + 750 + cfpp_ind('Total PDMS Volume') * 340
+cost_breakdown_dict.append({
+    "name": "CFPP Industry",
+    "step": "Initial Costs",
+    "specific item": "Mold Equipment",
+    "cost_$": 77000,
+    "quantity": 1,
+    "unit": "set"
+})
+cost_breakdown_dict.append({
+    "name": "CFPP Industry",
+    "step": "Initial Costs",
+    "specific item": "Photoresist",
+    "cost_$": 750,
+    "quantity": 1,
+    "unit": "set"
+})
+cost_breakdown_dict.append({
+    "name": "CFPP Industry",
+    "step": "Initial Costs",
+    "specific item": "PDMS",
+    "cost_$": cfpp_ind('Total PDMS Volume') * 340,
+    "quantity": cfpp_ind('Total PDMS Volume'),
+    "unit": "L"
+})
+
+
 
 '''
 "$/per cycle = 
@@ -80,6 +181,57 @@ cost_plasmid = cv.convert_units_grams(cfpp_ind('Total Gene Plasmid'), 'ng', 'ug'
 # cfpp # print('cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid')
 # cfpp # print(cost_lysate, cost_xdna, cost_t4_ligase, cost_t4_buffer, cost_apaI, cost_plasmid)
 cfpp_per_cycle_cost = cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid
+
+cost_breakdown_dict.append({
+    "name": "CFPP Industry",
+    "step": "Per Cycle Costs",
+    "specific item": "Lysate",
+    "cost_$": cost_lysate,
+    "quantity": cfpp_ind('Total Lysate'),
+    "unit": "mL"
+})
+cost_breakdown_dict.append({
+    "name": "CFPP Industry",
+    "step": "Per Cycle Costs",
+    "specific item": "xDNA",   
+    "cost_$": cost_xdna,
+    "quantity": cv.convert_units_grams(cfpp_ind('Total xDNA'), 'ug', 'mg'),
+    "unit": "mg"
+})
+cost_breakdown_dict.append({
+    "name": "CFPP Industry",
+    "step": "Per Cycle Costs",
+    "specific item": "T4 Ligase",
+    "cost_$": cost_t4_ligase,
+    "quantity": cfpp_ind('Total T4 Ligase'),
+    "unit": "units"
+})
+cost_breakdown_dict.append({
+    "name": "CFPP Industry",
+    "step": "Per Cycle Costs",
+    "specific item": "T4 Ligase Buffer",
+    "cost_$": cost_t4_buffer,
+    "quantity": cfpp_ind('Total T4 Ligase Buffer'),
+    "unit": "mL"
+})
+
+cost_breakdown_dict.append({
+    "name": "CFPP Industry",
+    "step": "Per Cycle Costs",
+    "specific item": "ApaI",
+    "cost_$": cost_apaI,
+    "quantity": cfpp_ind('Total ApaI Volume'),
+    "unit": "units"
+})
+cost_breakdown_dict.append({
+    "name": "CFPP Industry",
+    "step": "Per Industry Costs",
+    "specific item": "Gene Plasmid",
+    "cost_$": cost_plasmid,
+    "quantity": cfpp_ind('Total Gene Plasmid'),
+    "unit": "ng"
+})
+
 
 '''
 "t = 40h (pipelined into upstream + downstream) 
@@ -106,6 +258,30 @@ def cfpp_proto(name):
 cfpp_initial_cost = mold equipment + photoresist + pdms for mold creation
 '''
 cfpp_initial_cost = 77000 + 750 + cfpp_proto('Total PDMS Volume') * 340
+cost_breakdown_dict.append({
+    "name": "CFPP Prototype",
+    "step": "Initial Costs",
+    "specific item": "Mold Equipment",
+    "cost_$": 77000,
+    "quantity": 1,
+    "unit": "set"
+})
+cost_breakdown_dict.append({
+    "name": "CFPP Prototype",
+    "step": "Initial Costs",
+    "specific item": "Photoresist",
+    "cost_$": 750,
+    "quantity": 1,
+    "unit": "set"
+})
+cost_breakdown_dict.append({
+    "name": "CFPP Prototype",
+    "step": "Initial Costs",
+    "specific item": "PDMS",
+    "cost_$": cfpp_proto('Total PDMS Volume') * 340,
+    "quantity": cfpp_proto('Total PDMS Volume'),
+    "unit": "L"
+})
 
 '''
 "$/per cycle = 
@@ -125,6 +301,56 @@ cost_plasmid = cv.convert_units_grams(cfpp_proto('Total Gene Plasmid'), 'ng', 'u
 # cfpp # print('cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid')
 # cfpp # print(cost_lysate, cost_xdna, cost_t4_ligase, cost_t4_buffer, cost_apaI, cost_plasmid)
 cfpp_per_cycle_cost = cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid
+
+cost_breakdown_dict.append({
+    "name": "CFPP Prototype",
+    "step": "Per Cycle Costs",
+    "specific item": "Lysate",
+    "cost_$": cost_lysate,
+    "quantity": cfpp_proto('Total Lysate'),
+    "unit": "mL"
+})
+cost_breakdown_dict.append({
+    "name": "CFPP Prototype",
+    "step": "Per Cycle Costs",
+    "specific item": "xDNA",   
+    "cost_$": cost_xdna,
+    "quantity": cv.convert_units_grams(cfpp_proto('Total xDNA'), 'ug', 'mg'),
+    "unit": "mg"
+})
+cost_breakdown_dict.append({
+    "name": "CFPP Prototype",
+    "step": "Per Cycle Costs",
+    "specific item": "T4 Ligase",
+    "cost_$": cost_t4_ligase,
+    "quantity": cfpp_proto('Total T4 Ligase'),
+    "unit": "units"
+})
+cost_breakdown_dict.append({
+    "name": "CFPP Prototype",
+    "step": "Per Cycle Costs",
+    "specific item": "T4 Ligase Buffer",
+    "cost_$": cost_t4_buffer,
+    "quantity": cfpp_proto('Total T4 Ligase Buffer'),
+    "unit": "mL"
+})
+
+cost_breakdown_dict.append({
+    "name": "CFPP Prototype",
+    "step": "Per Cycle Costs",
+    "specific item": "ApaI",
+    "cost_$": cost_apaI,
+    "quantity": cfpp_proto('Total ApaI Volume'),
+    "unit": "units"
+})
+cost_breakdown_dict.append({
+    "name": "CFPP Prototype",
+    "step": "Per Cycle Costs",
+    "specific item": "Gene Plasmid",
+    "cost_$": cost_plasmid,
+    "quantity": cfpp_proto('Total Gene Plasmid'),
+    "unit": "ng"
+})
 
 '''
 "t = 40h (pipelined into upstream + downstream) 
@@ -163,6 +389,9 @@ cfpp_initial_cost = mold equipment + photoresist + pdms for mold creation
 '''
 cfpp_initial_cost = 77000 + 750 + cfpp_lab('Total PDMS Volume') * 340
 
+
+
+
 '''
 "$/per cycle = 
 =  lysate at 800CAD/1L
@@ -181,6 +410,8 @@ cost_plasmid = cv.convert_units_grams(cfpp_lab('Total Gene Plasmid'), 'ng', 'ug'
 # cfpp # print('cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid')
 # cfpp # print(cost_lysate, cost_xdna, cost_t4_ligase, cost_t4_buffer, cost_apaI, cost_plasmid)
 cfpp_per_cycle_cost = cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid
+
+
 
 '''
 "t = 40h (pipelined into upstream + downstream) 
@@ -495,3 +726,7 @@ final_costs_dict.append({
 
 final_costs_df = pd.DataFrame(final_costs_dict)
 final_costs_df.to_csv("../data/final_costs.csv", index=False)
+
+
+cost_breakdown_df = pd.DataFrame(cost_breakdown_dict)
+cost_breakdown_df.to_csv("../data/final_costs_breakdown.csv", index=False)
