@@ -1,0 +1,28 @@
+name,step,specific item,cost_$,quantity,unit
+CFPP Lab,Initial Costs,Mold Equipment,77000.0,1.0,set
+CFPP Lab,Initial Costs,Photoresist,750.0,1.0,set
+CFPP Lab,Initial Costs,PDMS,181333.33333333334,533.3333333333334,L
+CFPP Lab,Per Cycle Costs,Lysate,37333333.33333333,46666.66666666666,mL
+CFPP Lab,Per Cycle Costs,xDNA,1479111.111111111,14791.11111111111,mg
+CFPP Lab,Per Cycle Costs,T4 Ligase,4389.5743209876555,1066666.5600000003,units
+CFPP Lab,Per Cycle Costs,T4 Ligase Buffer,10666.666666666668,1066.6666666666667,mL
+CFPP Lab,Per Cycle Costs,ApaI,213333.3333333334,10666666.66666667,units
+CFPP Lab,Per Cycle Costs,Gene Plasmid,21333.33333333334,533333333.3333334,ng
+CFPP Industry,Initial Costs,Mold Equipment,77000.0,1.0,set
+CFPP Industry,Initial Costs,Photoresist,750.0,1.0,set
+CFPP Industry,Initial Costs,PDMS,1813333.3333333333,5333.333333333333,L
+CFPP Industry,Per Cycle Costs,Lysate,280000000.0,466666.6666666666,mL
+CFPP Industry,Per Cycle Costs,xDNA,14791111.11111111,147911.1111111111,mg
+CFPP Industry,Per Cycle Costs,T4 Ligase,43895.74320987654,10666665.6,units
+CFPP Industry,Per Cycle Costs,T4 Ligase Buffer,106666.66666666666,10666.666666666666,mL
+CFPP Industry,Per Cycle Costs,ApaI,2133333.333333333,106666666.66666666,units
+CFPP Industry,Per Industry Costs,Gene Plasmid,213333.3333333333,5333333333.333333,ng
+CFPP Prototype,Initial Costs,Mold Equipment,77000.0,1.0,set
+CFPP Prototype,Initial Costs,Photoresist,750.0,1.0,set
+CFPP Prototype,Initial Costs,PDMS,906.6666666666667,2.666666666666667,L
+CFPP Prototype,Per Cycle Costs,Lysate,186666.66666666663,233.3333333333333,mL
+CFPP Prototype,Per Cycle Costs,xDNA,7395.555555555555,73.95555555555555,mg
+CFPP Prototype,Per Cycle Costs,T4 Ligase,21.94787160493827,5333.3328,units
+CFPP Prototype,Per Cycle Costs,T4 Ligase Buffer,53.33333333333333,5.333333333333333,mL
+CFPP Prototype,Per Cycle Costs,ApaI,1066.6666666666667,53333.333333333336,units
+CFPP Prototype,Per Cycle Costs,Gene Plasmid,106.66666666666667,2666666.666666667,ng
