@@ -536,7 +536,32 @@ one-time costs = gmp certification + stable cell line development + cellular exp
 '''
 cbpp_initial_cost = 46000 + 30000 + cbpp_lab('Total Cell Culture Volume')/2000 * 200000 + cv.convert_units_liters(cbpp_lab('Total Cell Culture Volume'), 'ml', 'L')/50*30000    
 print("stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge")
-print(10000 , cbpp_lab('Total Cell Culture Volume')/2000 * 200000 , cv.convert_units_liters(cbpp_lab('Total Cell Culture Volume'), 'ml', 'L')/50*30000)
+print(30000 , cbpp_lab('Total Cell Culture Volume')/2000 * 200000 , cv.convert_units_liters(cbpp_lab('Total Cell Culture Volume'), 'ml', 'L')/50*30000)
+
+cost_breakdown_dict.append({
+    "name": "CBPP Lab",
+    "step": "Initial Costs",
+    "specific item": "GMP Certification",
+    "cost_$": 46000,
+    "quantity": 1,
+    "unit": "each"
+})
+cost_breakdown_dict.append({
+    "name": "CBPP Lab",
+    "step": "Initial Costs",
+    "specific item": "bioreactor",
+    "cost_$": cbpp_lab('Total Cell Culture Volume')/2000 * 200000 ,
+    "quantity": 1,
+    "unit": "each"
+})
+cost_breakdown_dict.append({
+    "name": "CBPP Lab",
+    "step": "Initial Costs",
+    "specific item": "high pressure homogenizer",
+    "cost_$": cv.convert_units_liters(cbpp_lab('Total Cell Culture Volume'), 'ml', 'L')/50*30000,
+    "quantity": 1,
+    "unit": "each"
+})
 
 '''
 $/per cycle = 
