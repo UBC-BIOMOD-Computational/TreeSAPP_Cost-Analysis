@@ -549,6 +549,14 @@ cost_breakdown_dict.append({
 cost_breakdown_dict.append({
     "name": "CBPP Lab",
     "step": "Initial Costs",
+    "specific item": "Stable Cell Line Development",
+    "cost_$": 30000,
+    "quantity": 1,
+    "unit": "each"
+})
+cost_breakdown_dict.append({
+    "name": "CBPP Lab",
+    "step": "Initial Costs",
     "specific item": "bioreactor",
     "cost_$": cbpp_lab('Total Cell Culture Volume')/2000 * 200000 ,
     "quantity": 1,
@@ -578,6 +586,16 @@ cbpp_per_cycle_cost = (cbpp_lab('Total LB')
     + cbpp_lab('Total NH4Cl') * 103 
     + cv.convert_units_grams(cbpp_lab('Total Glucose'), 'g', 'kg') * 54 
     + cv.convert_units_grams(cbpp_lab('Total IPTG'), 'mg', 'g') * 177.24)
+
+cost_breakdown_dict.append({
+    "name": "CBPP Lab",
+    "step": "Per Cycle Costs",
+    "specific item": "Media and Inducer",
+    "cost_$": cbpp_per_cycle_cost,
+    "quantity": 1,
+    "unit": "each cycle"
+})
+
 
 print(cbpp_lab('Total LB')  
 , cv.convert_units_grams(cbpp_lab('Total KH2PO4'), 'g', 'kg') * 259 
@@ -615,6 +633,40 @@ cbpp_initial_cost = 175000 + 75000 + cbpp_ind('Total Cell Culture Volume')/2000 
 print("stable cell line development + cellular expression equipment + highPressureHomogenizer/centrifuge")
 print(75000 , cbpp_ind('Total Cell Culture Volume')/2000 * 200000 , cv.convert_units_liters(cbpp_ind('Total Cell Culture Volume'), 'ml', 'L')/500*200000)
 
+cost_breakdown_dict.append({
+    "name": "CBPP Industry",
+    "step": "Initial Costs",
+    "specific item": "GMP Certification",
+    "cost_$": 175000,
+    "quantity": 1,
+    "unit": "each"
+})
+cost_breakdown_dict.append({
+    "name": "CBPP Industry",
+    "step": "Initial Costs",
+    "specific item": "Stable Cell Line Development",
+    "cost_$": 75000,
+    "quantity": 1,
+    "unit": "each"
+})
+cost_breakdown_dict.append({
+    "name": "CBPP Industry",
+    "step": "Initial Costs",
+    "specific item": "bioreactor",
+    "cost_$": cbpp_ind('Total Cell Culture Volume')/2000 * 200000,
+    "quantity": 1,
+    "unit": "each"
+})
+cost_breakdown_dict.append({
+    "name": "CBPP Industry",
+    "step": "Initial Costs",
+    "specific item": "high pressure homogenizer",
+    "cost_$": cv.convert_units_liters(cbpp_ind('Total Cell Culture Volume'), 'ml', 'L')/500*200000 ,
+    "quantity": 1,
+    "unit": "each"
+})
+
+
 '''
 $/per cycle = 
 LB + KH2PO4 + NaCl + MgSO4 + CaCl2 + NH4Cl + Glucose + IPTG
@@ -629,6 +681,16 @@ cbpp_per_cycle_cost = (cbpp_ind('Total LB')
     + cbpp_ind('Total NH4Cl') * 103 
     + cv.convert_units_grams(cbpp_ind('Total Glucose'), 'g', 'kg') * 54 
     + cv.convert_units_grams(cbpp_ind('Total IPTG'), 'mg', 'g') * 177.24)
+
+
+cost_breakdown_dict.append({
+    "name": "CBPP Industry",
+    "step": "Per Cycle Costs",
+    "specific item": "Media and Inducer",
+    "cost_$": cbpp_per_cycle_cost,
+    "quantity": 1,
+    "unit": "each cycle"
+})
 
 print(cbpp_ind('Total LB')  
 , cv.convert_units_grams(cbpp_ind('Total KH2PO4'), 'g', 'kg') * 259 
@@ -662,7 +724,25 @@ one-time costs = stable cell line development + cellular expression equipment + 
 '''
 cbpp_initial_cost = 10000 + 5000 + 30000
 print("stable cell line development + cellular expression equipment + lysis machine")
-print(2000 , 5000 , 30000)
+print(10000 , 5000 , 30000)
+
+cost_breakdown_dict.append({
+    "name": "CBPP Prototype - Switching Proteins",
+    "step": "Initial Costs",
+    "specific item": "bioreactor",
+    "cost_$": 5000,
+    "quantity": 1,
+    "unit": "each"
+})
+cost_breakdown_dict.append({
+    "name": "CBPP Prototype - Switching Proteins",
+    "step": "Initial Costs",
+    "specific item": "lysis machine",
+    "cost_$": 30000 ,
+    "quantity": 1,
+    "unit": "each"
+})
+
 
 '''
 $/per cycle = 
@@ -678,6 +758,34 @@ cbpp_per_cycle_cost = (cbpp_proto('Total LB')
     + cbpp_proto('Total NH4Cl') * 103 
     + cv.convert_units_grams(cbpp_proto('Total Glucose'), 'g', 'kg') * 54 
     + cv.convert_units_grams(cbpp_proto('Total IPTG'), 'mg', 'g') * 177.24)
+
+
+cost_breakdown_dict.append({
+    "name": "CBPP Prototype - Switching Proteins",
+    "step": "Per Cycle Costs",
+    "specific item": "GMP Certification",
+    "cost_$": 45000,
+    "quantity": 1,
+    "unit": "each"
+})
+cost_breakdown_dict.append({
+    "name": "CBPP Prototype - Switching Proteins",
+    "step": "Per Cycle Costs",
+    "specific item": "Stable Cell Line Development",
+    "cost_$": 10000,
+    "quantity": 1,
+    "unit": "each"
+})
+
+cost_breakdown_dict.append({
+    "name": "CBPP Prototype - Switching Proteins",
+    "step": "Per Cycle Costs",
+    "specific item": "Media and Inducer",
+    "cost_$": cbpp_per_cycle_cost,
+    "quantity": 1,
+    "unit": "each cycle"
+})
+
 
 print(cbpp_proto('Total LB')  
 , cv.convert_units_grams(cbpp_proto('Total KH2PO4'), 'g', 'kg') * 259 
