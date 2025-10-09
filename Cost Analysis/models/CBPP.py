@@ -10,7 +10,7 @@ Protein Science, 18(5), 936–948. https://doi.org/10.1002/pro.102
 df = pd.DataFrame(columns=['section', 'section_time', 'name', 'value', 'unit'])
 
 ## Cell-Based Protein Expression Starting Requirements ======================
-target_protein_annual = {'name': 'Target Protein', 'value': 0.05, 'unit': 'kg'}
+target_protein_annual = {'name': 'Target Protein', 'value': 17, 'unit': 'mg'}
 cycles = {'name': 'Total Cycles', 'value': 50, 'unit': 'cycles'}
 target_protein = {'name': 'Target Protein Per Cycle', 'value': cv.convert_units_grams(target_protein_annual['value'] / cycles['value'], 'kg', 'g'), 'unit': 'g'}
 
