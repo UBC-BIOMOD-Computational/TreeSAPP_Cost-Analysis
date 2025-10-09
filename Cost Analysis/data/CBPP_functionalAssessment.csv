@@ -1,0 +1,15 @@
+section,section_time,name,value,unit
+Starting Requirements,0,Target Protein,17.0,mg
+Starting Requirements,0,Total Cycles,50.0,cycles
+Starting Requirements,0,Target Protein Per Cycle,340.0,g
+Volumes after Lysis/Centrifugation,2 hours,Total Cell Culture Volume,1000000.0,mL
+Induction + Incubation,36 hours,Total IPTG,10000.0,mg
+Growth Time,8 hours,Total LB,1000.0,L
+Growth Time,8 hours,Total KH2PO4,3402.25,g
+Growth Time,8 hours,Total NaCl,584.4,g
+Growth Time,8 hours,Total MgSO4,601.8050000000001,g
+Growth Time,8 hours,Total CaCl2,22.196,g
+Growth Time,8 hours,Total NH4Cl,1000.0,g
+Growth Time,8 hours,Total Glucose,10000.0,g
+Growth Time,8 hours,Total Vitamin B,100.0,mL
+Growth Time,8 hours,Total Iron,5585.0,mg
