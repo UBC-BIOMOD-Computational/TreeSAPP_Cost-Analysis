@@ -520,6 +520,55 @@ final_costs_dict.append({
 })
 
 
+#  Cell Free Functional Screening (Switching Proteins + recycle mpads) -----------------------
+
+
+
+cfpp_functional_df = pd.read_csv("../data/CFPP_functionalAssessment.csv")
+def cfpp_functional(name):
+    return cfpp_functional_df.loc[cfpp_functional_df['name'] == name, 'value'].iloc[0]
+
+'''
+cfpp_initial_cost =  photoresist + pdms for mold creation
+'''
+cfpp_initial_cost = 750 + cfpp_functional('Total PDMS Volume') * 340
+
+'''
+"$/per cycle = 
+=  lysate at 800CAD/1L
++ dna sequences for xdna arms at $100/mg
++ T4 Ligase for 243units/$1
++ T4 Ligase buffer for $10/mL
++ ApaI for 50 units/$1
++ plasmid purified (7500ug for $300)"
+'''
+cost_lysate = cfpp_functional('Total Lysate') * 800
+cost_xdna = cv.convert_units_grams(cfpp_functional('Total xDNA'), 'ug', 'mg') * 100 / 2 # recycling mpads cuts xdna cost in half
+cost_t4_ligase = cfpp_functional('Total T4 Ligase') / 243 / 2 # recycling mpads cuts T4 ligase cost in half
+cost_t4_buffer = cfpp_functional('Total T4 Ligase Buffer') * 10 / 2 # recycling mpads cuts T4 buffer cost in half
+cost_apaI = cfpp_functional('Total ApaI Volume') / 50 / 2 # recycling mpads cuts ApaI cost in half
+cost_plasmid = cv.convert_units_grams(cfpp_functional('Total Gene Plasmid'), 'ng', 'ug') / 7500 * 300 / 2 # recycling mpads cuts plasmid cost in half
+# cfpp # print('cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid')
+# cfpp # print(cost_lysate, cost_xdna, cost_t4_ligase, cost_t4_buffer, cost_apaI, cost_plasmid)
+cfpp_per_cycle_cost = cost_lysate + cost_xdna + cost_t4_ligase + cost_t4_buffer + cost_apaI + cost_plasmid
+
+'''
+"t = 40h (pipelined into upstream + downstream) 
+*not including initial mold making"
+'''
+cfpp_time = 40
+
+final_costs_dict.append({
+    "name": "CFPP Functional (recycle mpads)",
+    "num_cycles": cfpp_functional('Total Cycles'),
+    "initial_cost": cfpp_initial_cost,
+    "cycle_cost_$": cfpp_per_cycle_cost,
+    "cycle_time_hours": cfpp_time,
+    "protein_per_cycle_mg": cfpp_functional('Target Protein Per Cycle')
+})
+
+
+
 ## =================================================================
 ## CELL BASED ======================================================
 
@@ -806,7 +855,60 @@ final_costs_dict.append({
     "protein_per_cycle_mg": cbpp_proto('Target Protein Per Cycle')
 })
 
+# Cell Based Functional Screening (Switching Proteins) -----------------------
+
+cbpp_functional_df = pd.read_csv("../data/CBPP_functionalAssessment.csv")
+def cbpp_functional(name):
+    return cbpp_functional_df.loc[cbpp_functional_df['name'] == name, 'value'].iloc[0]
+
+'''
+done per cycle - cell line development
+'''
+cbpp_initial_cost = 0
+
+'''
+$/per cycle =  stable cell line development + 
+LB + KH2PO4 + NaCl + MgSO4 + CaCl2 + NH4Cl + Glucose + IPTG
+
+'''
+# cbpp_per_cycle_cost = cell line development/transformation + LB + KH2PO4 + NaCl + MgSO4 + CaCl2 + NH4Cl + Glucose + IPTG
+cbpp_per_cycle_cost = (800   #transformation kit + plasmid + genes
+    + cbpp_functional('Total LB')
+    + cv.convert_units_grams(cbpp_functional('Total KH2PO4'), 'g', 'kg') * 259
+    + cv.convert_units_grams(cbpp_functional('Total NaCl'), 'g', 'kg') * 15
+    + cv.convert_units_grams(cbpp_functional('Total MgSO4'), 'g', 'kg') * 321
+    + cbpp_functional('Total CaCl2') / 500 * 523
+    + cbpp_functional('Total NH4Cl') * 103
+    + cv.convert_units_grams(cbpp_functional('Total Glucose'), 'g', 'kg') * 54
+    + cv.convert_units_grams(cbpp_functional('Total IPTG'), 'mg', 'g') * 177.24)
+
+print(cbpp_functional('Total LB')
+, cv.convert_units_grams(cbpp_functional('Total KH2PO4'), 'g', 'kg') * 259
+, cv.convert_units_grams(cbpp_functional('Total NaCl'), 'g', 'kg') * 15
+, cv.convert_units_grams(cbpp_functional('Total MgSO4'), 'g', 'kg') * 321
+, cbpp_functional('Total CaCl2') / 500 * 523
+, cbpp_functional('Total NH4Cl') * 103
+, cv.convert_units_grams(cbpp_functional('Total Glucose'), 'g', 'kg') * 54
+, cv.convert_units_grams(cbpp_functional('Total IPTG'), 'mg', 'g') * 177.24)
+cbpp_time = 46 + 48 # additional 48 hours for transformation and selection each time
+
+final_costs_dict.append({
+    "name": "CBPP Functional (Switching Proteins)",
+    "num_cycles": cbpp_functional('Total Cycles'),
+    "initial_cost": cbpp_initial_cost,
+    "cycle_cost_$": cbpp_per_cycle_cost,
+    "cycle_time_hours": cbpp_time,
+    "protein_per_cycle_mg": cbpp_functional('Target Protein Per Cycle')
+})
+
+
+
 #  Cell Based Prototype (Switching Proteins) -----------------------
+
+cbpp_functional_df = pd.read_csv("../data/CBPP_prototype_50g_50cycles.csv")
+def cbpp_functional(name):
+    return cbpp_functional_df.loc[cbpp_functional_df['name'] == name, 'value'].iloc[0]
+
 
 '''
 done per cycle - cell line development
@@ -852,6 +954,7 @@ final_costs_dict.append({
     "cycle_time_hours": cbpp_time,
     "protein_per_cycle_mg": cbpp_proto('Target Protein Per Cycle')
 })
+
 
 
 ## =================================================================
