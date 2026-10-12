@@ -1,0 +1,5 @@
+diagnostic,sensitivity,specificity,sample_type,invasiveness_score,technical_feasibility_score,readiness_level,regulatory_burden_score,feasibility_gate,notes
+Gel,0.85,0.90,whole_blood,0.4,0.55,4,0.45,unknown,Placeholder performance. Amplification gate in config can override feasibility. Whole blood; no RNA extraction.
+Protein,0.80,0.92,plasma,0.5,0.25,2,0.70,fail,Placeholder. Blocked until VIM/CDH1 is shown to be detectable in plasma or serum.
+Sequencing,0.95,0.99,plasma,0.5,0.70,7,0.80,pass,Placeholder targeted-sequencing performance; applies to both outsourced and in-house methods.
+SNP,0.98,0.995,whole_blood,0.4,0.85,8,0.40,pass,Placeholder genotyping assay performance (known VIM/CDH1 variants).

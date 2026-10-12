@@ -1,0 +1,94 @@
+# Diagnostic cost and effectiveness comparison — 2026 USD
+currency: USD
+target_price_year: 2026
+
+scales: [1000, 50000]
+
+# 50,000 tests treated as annual volume so fixed capital is amortized.
+# Use one_time to load the full capital cost onto a single batch.
+volume_basis: annual  # annual | one_time
+amortization_years: 5
+discount_rate: 0.0
+
+prevalence:
+  low: 0.01
+  base: 0.05
+  high: 0.10
+
+cpi:
+  # Approximate US CPI index levels used to inflate older quotes to 2026 USD.
+  2018: 251.1
+  2019: 255.7
+  2020: 258.8
+  2021: 271.0
+  2022: 292.7
+  2023: 304.7
+  2024: 313.7
+  2025: 322.0
+  2026: 330.0
+
+effectiveness_weights:
+  accuracy: 0.35
+  turnaround: 0.20
+  feasibility: 0.20
+  invasiveness: 0.10
+  regulatory_burden: 0.15
+
+# Blend used for "best overall". Must sum to 1.
+overall_weights:
+  cost: 0.50
+  effectiveness: 0.50
+
+sequencing:
+  always_run_both: true
+
+gel_chemistry:
+  detection_basis: literature  # literature | device
+  well_volume:
+    value: 10
+    unit: uL
+  literature_proven:
+    quantity: 0.5
+    unit: pmol
+    volume: 10
+    volume_unit: uL
+    note: "Toehold strand displacement detected synthetic RNA at 50 nM in 10 uL (0.5 pmol)."
+  device_proven:
+    quantity: 100
+    unit: pmol
+    note: "Lowest absolute quantity proven on the team device (per well). Far above the literature figure."
+  target_conc_needed:
+    literature:
+      value: 50
+      unit: nM
+    device:
+      value: 100
+      unit: pmol_per_well
+  expected_input_conc:
+    low:
+      value: 0.001
+      unit: pM
+    base:
+      value: 0.1
+      unit: pM
+    high:
+      value: 10
+      unit: pM
+    note: "Placeholder expected VIM/CDH1 concentration in sample. Replace with measured values."
+  amplification:
+    chemistry: RT-PCR
+    efficiency: 0.85
+    max_fold_gain: 1.0e8
+    ntc_rate: 0.05
+  background_rna_tolerance_ng_per_uL: 25
+  rna_purification_required: false
+  probe_purity_critical: true
+
+monte_carlo:
+  n_draws: 10000
+  seed: 42
+  distribution: triangular
+
+exclude_from_best_overall_gates:
+  - fail
+  - unknown
